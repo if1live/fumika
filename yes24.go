@@ -1,7 +1,9 @@
 package fumika
 
 import (
-	"strings"
+	"io"
+
+	"errors"
 
 	"golang.org/x/net/html"
 )
@@ -15,8 +17,23 @@ short url : http://www.yes24.com/Mall/buyback/Search?SearchWord=9788926790403
 type Yes24API struct {
 }
 
-func CreateYes24() *Yes24API {
+func NewYes24() *Yes24API {
 	return &Yes24API{}
+}
+
+func (api *Yes24API) Search(isbn string) (SearchResult, error) {
+	sanitizedISBN, ok := sanitizeISBN(isbn)
+	if !ok {
+		return SearchResult{}, errors.New("invalid isbn : " + isbn)
+	}
+	uri := api.createURI(sanitizedISBN)
+	reader, err := uriToReader(uri)
+	if err != nil {
+		return SearchResult{}, err
+	}
+
+	result := api.parse(reader)
+	return result, nil
 }
 
 func (api *Yes24API) createURI(isbn string) string {
@@ -25,11 +42,10 @@ func (api *Yes24API) createURI(isbn string) string {
 	return url + qs
 }
 
-func (api *Yes24API) parse(source string) SearchResult {
+func (api *Yes24API) parse(reader io.Reader) SearchResult {
 	result := SearchResult{}
 
-	r := strings.NewReader(source)
-	doc, err := html.Parse(r)
+	doc, err := html.Parse(reader)
 	if err != nil {
 		panic(err)
 	}

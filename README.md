@@ -15,7 +15,7 @@
 
 ## Test
 ```bash
-# download testdata
+# (optional) download testdata 
 cd testdata
 python fetch.py
 
@@ -26,25 +26,45 @@ go test
 ### Aladin
 
 ```golang
-api := fumika.CreateAladin()
+api := fumika.NewAladin()
 isbn := "9788926790403"
-result, found := api.Search(isbn)
-if found {
-    fmt.Printf("%Q", result)
-} else {
-    fmt.Println("not found")
+result, err := api.Search(isbn)
+if err != nil {
+    panic(err)
 }
+
+fmt.Println("Aladin API")
+printSearchResult(&result)
+```
+
+```
+Aladin API
+Title : 기어와라! 냐루코 양 1
+UnitPrice : 6000
+PriceBest : 600
+PriceGood : 500
+PriceNormal : 400
 ```
 
 ### Yes24
 
 ```golang
-api := fumika.CreateYes24()
+api := fumika.NewYes24()
 isbn := "9788926790403"
-result, found := api.Search(isbn)
-if found {
-    fmt.Printf("%Q", result)
-} else {
-    fmt.Println("not found")
+result, err := api.Search(isbn)
+if err != nil {
+    panic(err)
 }
+
+fmt.Println("Yes24 API")
+printSearchResult(&result)
+```
+
+```
+Yes24 API
+Title : 기어와라! 냐루코 양 1
+UnitPrice : 6000
+PriceBest : 600
+PriceGood : 600
+PriceNormal : 500
 ```

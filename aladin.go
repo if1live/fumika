@@ -1,7 +1,8 @@
 package fumika
 
 import (
-	"strings"
+	"errors"
+	"io"
 
 	"golang.org/x/net/html"
 )
@@ -16,8 +17,23 @@ simple url : http://off.aladin.co.kr/shop/usedshop/wc2b_search.aspx?KeyWord=9788
 type AladinAPI struct {
 }
 
-func CreateAladin() *AladinAPI {
+func NewAladin() *AladinAPI {
 	return &AladinAPI{}
+}
+
+func (api *AladinAPI) Search(isbn string) (SearchResult, error) {
+	sanitizedISBN, ok := sanitizeISBN(isbn)
+	if !ok {
+		return SearchResult{}, errors.New("invalid isbn : " + isbn)
+	}
+	uri := api.createURI(sanitizedISBN)
+	reader, err := uriToReader(uri)
+	if err != nil {
+		return SearchResult{}, err
+	}
+
+	result := api.parse(reader)
+	return result, nil
 }
 
 func (api *AladinAPI) createURI(isbn string) string {
@@ -26,11 +42,10 @@ func (api *AladinAPI) createURI(isbn string) string {
 	return url + qs
 }
 
-func (api *AladinAPI) parse(source string) SearchResult {
+func (api *AladinAPI) parse(reader io.Reader) SearchResult {
 	result := SearchResult{}
 
-	r := strings.NewReader(source)
-	doc, err := html.Parse(r)
+	doc, err := html.Parse(reader)
 	if err != nil {
 		panic(err)
 	}
