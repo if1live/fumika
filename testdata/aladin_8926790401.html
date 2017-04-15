@@ -1,0 +1,2581 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>알라딘: 매입가 조회, 판매가능여부 확인</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/js/c2b.js?date=20170415"></script>
+    <script type="text/javascript" src="/m/js/m.accounting.js"></script>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="/ucl_editor/css/basic_text.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="/ucl_editor/css/main_footer.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="/ucl_editor/standard/button.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="/ucl_editor/standard/table_tap_title.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="/ucl_editor/css/style.css"  >
+    <link rel="stylesheet" media="screen" type="text/css" href="/ucl_editor/css/usedshop_c2b_v2.css" />
+    
+
+</head>
+<body>
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/jsdomain.js"></script>
+<script type="text/javascript" src="/js/common.js?dummy=20150819"></script>
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript" src="/js/prototypeUtil.js?dummy=20160422"></script>
+<script type="text/javascript" src="/js/alajax.js"></script>
+<script type="text/javascript" src="/js/header.js?dummy=20160718"></script>
+<script type="text/javascript" src="/js/music.js"></script>
+<script type="text/javascript" src="/search/autocomplete/qsChk.js?dummy=20120104"></script>
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+
+<style type="text/css">
+    body {
+	    margin-left: 0px;
+	    margin-top: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 0px;
+    }
+    #global_set2_3 {float:left;text-align:center; }
+    #global_set2_3 ul {}
+    #global_set2_3 li { float:left;margin:0;padding:0;display:inline;list-style:none;font-size:0;height:28px;}
+    #global_set2_3 li.set2se {width:1px; background:url(http://image.aladin.co.kr/img/header/2011/global_set1_se.gif) right;}
+
+    #re_topmenu_wrap {background:url(http:image.aladin.co.kr/img/header/2011/header_menu_bg_new.gif) repeat-x; height:31px;}
+    /*검색-키보드 확대시 대비한 css*/
+    
+    #global_search {background:url(http://image.aladin.co.kr/img/header/bg_search.gif) no-repeat; width:535px; position:relative; top:28px; height:41px;}
+    
+    #global_search dl { float:left; width:78px; margin:12px 0 0 20px;}
+    #global_search dt {background:url(http://image.aladin.co.kr/img/header/i_arrdown.gif) no-repeat right 5px; color:#2f9ddc; font-weight:bold}
+    #global_search img.arrow {position: absolute;right: 122px;top: 8px;}
+    #global_search input { width: 280px; margin: 9px 0 0 12px; border: none; font: bold 16px 돋움; background: transparent; color:#006699;}
+    #global_search input.searchBtn {width: 40px;height: 20px;position: absolute;right: 72px;top: 1px;}
+    #global_search input.searchBtn2 {width: 53px;height: 13px;position: absolute;right:5px;top: 4px;}
+</style> 
+<script type="text/javascript"> 
+    var $j = jQuery.noConflict();
+    $j(document).ready(function () {
+    $j('.mall_menu_img').hover(
+        function () { $j(this).attr("src", $j(this).attr("src").replace(".gif","_on.gif")); },
+        function () { $j(this).attr("src", $j(this).attr("src").replace("_on.gif",".gif")); }
+    );
+    $j('#global_set2_3 ul li').hover(
+        function () { $j($j(this).attr("id")).show(); },
+        function () { $j($j(this).attr("id")).hide();}
+    );
+    $j('#global_set3_2 ul li').hover(
+        function () { $j($j(this).attr("id")).show(); },
+        function () { $j($j(this).attr("id")).hide();}
+    );
+    $j('#head_layer_menu_container').hover(
+        function () { $j("#head_layer_menu").show(); },
+        function () { $j("#head_layer_menu").hide();}
+    );
+    $j('#re_mallmenu ul li').hover(
+        function () { $j($j(this).attr("id")).show(); },
+        function () { $j($j(this).attr("id")).hide();}
+    );
+    $j('#re_submallmenu ul li').hover(
+        function () { $j($j(this).attr("id")).show(); },
+        function () { $j($j(this).attr("id")).hide(); }
+    );
+    $j('#searchTargetDesc').hover(
+        function () { $j("#searchTargetDropDown").show(); },  
+        function () { $j("#searchTargetDropDown").hide(); }
+    );
+});
+</script>    
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+  var WRInitTime = (new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link href="/ucl_editor/css/header_2011.css?dummy=20120104" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        #Wa_header1_headerTop tr, #Wa_header1_headerTop td,
+        #footer tr, #footer td{ text-align:left; }    
+    </style>
+    <!--[if IE]>
+    <style type="text/css">
+        #T { z-index:10;} 
+    </style>
+    <![endif]-->
+
+
+
+
+
+
+
+<script type="text/javascript">
+	/************* Search Word 광고 @visharp*******************/
+	var swbanner_sw = null;
+	var swbanner_swResetFlag = false;
+	var swbanner_swBanner = [
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/160112_s_usedshop01.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=591740'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2016/160826_s_usedshop.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=597217'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170117_s_child.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=600904'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170206_s_used03.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=601375'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170206_s_used06.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=601374'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170206_s_used05.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=601373'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170206_s_used04.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=601372'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170206_s_used01.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=601370'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170206_s_used02.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=601371'},
+{image: 'url(http://image.aladin.co.kr/img/ad/banner/2017/170330_s_used01.gif)', url:'/banner/wadbanner_redirect.aspx?PubBannerId=602750'}]; 
+
+	var swbanner_searchBannerIndex = 3;
+
+    function swbanner_swReset(){
+		if(!swbanner_swResetFlag){
+			swbanner_sw.style.backgroundImage='';
+			swbanner_swResetFlag = true;
+		}
+	}
+
+	var swbanner_window_onload = function(){ 
+		
+		swbanner_sw = document.getElementById('SearchWord');
+		if(!swbanner_sw) return; 
+
+        if(swbanner_swBanner.length<1) return; 
+
+		swbanner_sw.style.backgroundImage = swbanner_swBanner[swbanner_searchBannerIndex].image;
+		swbanner_sw.style.backgroundRepeat = "no-repeat";
+		swbanner_sw.style.backgroundAttachment = "scroll";
+		addEvent2("swbanner_sw", "onclick", swbanner_swReset);
+		addEvent2("swbanner_sw", "onkeydown", swbanner_swReset);
+		// 아래 이벤트 적용시 광고문구가 바로 삭제되는 문제가 있어서 사용안함
+		//addEvent2("swbanner_sw", "onfocus", swbanner_swReset);    
+		addEvent2("window", "onload", function (){ 
+			if(!swbanner_swResetFlag) swbanner_sw.value="";
+		} );
+
+		document.getElementById('QuickSearch').onsubmit = function(){
+			if( swbanner_sw.value=='' && swbanner_sw.style.backgroundImage!=''){
+
+				var goURL = swbanner_swBanner[swbanner_searchBannerIndex].url;
+
+				// frameless.
+				if(parent==this){
+					location.href = goURL;
+					return false;
+				}
+
+				try{
+					// only one frame.
+					if(parent.document.getElementById('ebookFrame')!=null){
+						parent.location.href = goURL;
+						return false;
+					}
+				} catch(e){ warn('0'+e); }
+
+
+				try{
+					// double frames
+					if(parent.parent.document.getElementById('ebookFrame')!=null){
+						parent.parent.location.href = goURL;
+						return false;
+					}
+				} catch(e){ warn('1'+e); }
+
+				location.href = goURL;  
+				return false;
+			}
+			return true;
+		};
+	}
+
+	function switchSearchBanner(){
+		if(swbanner_swBanner.length<1) return;
+		if(!swbanner_sw) return;
+		swbanner_swResetFlag = false;
+		swbanner_sw.value ="";
+		swbanner_searchBannerIndex=(swbanner_searchBannerIndex+1)%swbanner_swBanner.length;
+		swbanner_sw.style.backgroundImage = swbanner_swBanner[swbanner_searchBannerIndex].image;
+	}
+	/*************************/
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="Wa_header1_headerTop">
+	
+<div id="w_t_event" style="display:none">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                    <td width="50%" bgcolor="#ffaac0" style="text-align:right !important"><a href="http://www.aladin.co.kr/events/wevent.aspx?EventId=138792"><img src="http://image.aladin.co.kr/img/ad/banner/2017/170310_bn1_new.jpg" alt="" border="0"/></a></td>
+                    <td width="50%" bgcolor="#18d8a5" style="text-align:left"><img src="http://image.aladin.co.kr/img/ad/banner/2017/170401_bn1.jpg" alt="" border="0" usemap="#Map_16thbn"/></td>
+                    </tr>
+                </table>
+                <map name="Map_16thbn" id="Map_16thbn">
+                    <area shape="rect" coords="442,1,464,53" href="#" alt="닫기" onclick="javascript:fn_hide_top_event('w_t_event');return false;" />
+                    <area shape="rect" coords="34,2,400,52" href="http://www.aladin.co.kr/events/wevent.aspx?EventId=161930" />
+                </map>
+            </div>
+<script type="text/javascript">
+    if (getCookie("ala_w_t_event") != "hide")
+        $j("#w_t_event").show();
+    
+    if (getCookie("ala_w_u_event") != "hide")
+        $j("#w_u_event").show();
+    
+    function fn_hide_top_event(id)
+    {
+        setCookie('ala_'+id, "hide" , 1);
+        $j("#"+id).hide();
+    }
+</script>
+
+<div id="global_wrap">
+    <div id="global_setwrap">
+        <div id="global_set2_3">
+            <ul><li><a href="http://www.aladin.co.kr/home/welcome.aspx" title="HOME"><img alt="HOME"src="http://image.aladin.co.kr/img/header/2011/global/global_set1_m01.gif" /></a></li><li class="set2se"></li><li id="#head_book_layer"><a href="http://www.aladin.co.kr/home/wbookmain.aspx" title="국내도서"><img alt="국내도서" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m01.gif" /></a>
+
+<div style="position:relative;z-index:99999;"> 
+  <div id="head_book_layer" class="hdr" style="width:836px;"> 
+    <div style="position:relative;float:left"> 
+      <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">
+        <tr> 
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=13789" class="gr03">유아</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1108" class="gr03"><strong>어린이</strong></a></td>
+              </tr>
+              
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=17195" class="gr03">전집/중고전집</a></td>
+              </tr>
+              
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1137" class="gr03">청소년</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2030" class="gr03">좋은부모</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=50246" class="gr03"><strong>초등학교참고서</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=76000" class="gr03">중학교참고서</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=76001" class="gr03"><strong>고등학교참고서</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1230" class="gr03">가정/요리/뷰티</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=55890" class="gr03">건강/취미/레저</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1" class="gr03"><strong>소설/시/희곡</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=112011" class="gr03"><strong>장르소설</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=55889" class="gr03">에세이</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1196" class="gr03">여행</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2551" class="gr03">만화</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=656" class="gr03"><strong>인문학</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=798" class="gr03">사회과학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=74" class="gr03">역사</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=517" class="gr03">예술/대중문화</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=987" class="gr03">과학</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=170" class="gr03"><strong>경제경영</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=336" class="gr03">자기계발</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1322" class="gr03">외국어</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=351" class="gr03">컴퓨터/모바일</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=8257" class="gr03">대학교재</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1383" class="gr03">수험서/자격증</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=34582" class="gr03">공무원 수험서</a></td>
+              </tr>              
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=4395" class="gr03">사전/기타</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1237" class="gr03">종교/역학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2913" class="gr03">잡지</a></td>
+              </tr>
+            </table></td>
+          <td width="105" valign="top"> <table>
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/shop/common/wbest.aspx?BranchType=1' class="blue01">베스트셀러</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/shop/common/wnew.aspx?BranchType=1' class="blue01">새로나온책</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/shop/book/Recommend2010/main.aspx' class="blue01">추천도서</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/author/main/wauthor_book_main.aspx' class="blue01">저자파일</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/shop/book/wHotSale_Index.aspx' class="blue01">정가인하도서</a></td>
+              </tr>
+              
+			  
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/events/wevent_main.aspx' class="blue01">이벤트</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://www.aladin.co.kr/bookfund/bookfundmain.aspx' class="blue01">독자북펀드</a></td>
+              </tr>
+              
+            </table></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div style="position:relative;float:left"> 
+      <div style="position:absolute;top:0px;"> 
+	<a href="http://www.aladin.co.kr/events/wevent.aspx?EventId=161930"><img src="http://image.aladin.co.kr/img/banner/header/2017/201704_case_js.png" style="width:373px;height:237px;"></a>
+
+      </div>
+    </div>
+    
+  </div>
+</div>
+</li><li class="set2se"></li><li id="#head_foreign_layer"><a href="http://foreign.aladin.co.kr/home/wforeignmain.aspx" title="외국도서"><img alt="외국도서" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m02.gif" /></a>
+
+<div style="position:relative;z-index:99999;"> 
+  <div id="head_foreign_layer" class="hdr" style="width:762px;"> 
+    <div style="position:relative;float:left"> 
+      <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">
+        <tr> 
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><strong>영미도서</strong></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90842" class="gr03">소설/시/희곡</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90861" class="gr03">ELT/어학/사전</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90853" class="gr03">인문/사회</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90835" class="gr03">경제경영</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90857" class="gr03">종교/명상/점술</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90850" class="gr03">요리</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=25557" class="gr03">해외잡지</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90847" class="gr03">역사</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90836" class="gr03">공예/취미/수집</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90831" class="gr03">가정/원예/인테리어</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90833" class="gr03">건강/스포츠</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90840" class="gr03">만화</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90858" class="gr03">청소년</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90846" class="gr03">여행</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><strong>대학교재/전문서</strong></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90848" class="gr03">예술/대중문화</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90855" class="gr03">자연과학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90838" class="gr03">기술공학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90852" class="gr03">의학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90859" class="gr03">컴퓨터</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90837" class="gr03">교육/자료</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90834" class="gr03">건축/디자인</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90844" class="gr03">언어학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90841" class="gr03">법률</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90843" class="gr03">수험서</a></td>
+              </tr>
+              <tr> 
+                <td style="padding-top:5px;"><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28253" class="gr03"><strong>기타 
+                  언어권</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28254" class="gr03">스페인 
+                  도서</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28255" class="gr03">독일 
+                  도서</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28492" class="gr03">중국 
+                  도서</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106165" class="gr03"><strong>어린이</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></td>
+              </tr>
+              <tr> 
+                <td style="padding-top:3px;"><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106183" class="gr03">캐릭터</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106168" class="gr03">그림책</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106172" class="gr03">리더스</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106181" class="gr03">챕터북</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106171" class="gr03">동화책</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106177" class="gr03">오디오북</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106175" class="gr03">어린이사전</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106166" class="gr03">개념학습</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106185" class="gr03">코스북</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106176" class="gr03">영어학습</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106167" class="gr03">교과학습</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106173" class="gr03">미국교과서</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106174" class="gr03">수상작</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106178" class="gr03">제2외국어/이중언어</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28261" class="gr03"><strong>일본도서</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></td>
+              </tr>
+              <tr> 
+                <td style="padding-top:3px;"><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28402" class="gr03">잡지</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28375" class="gr03">코믹</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28262" class="gr03">문학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28338" class="gr03">실용/취미/생활</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28400" class="gr03">라이트노벨</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28366" class="gr03">어린이</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28294" class="gr03">경제경영</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=115123" class="gr03">애니메이션 굿즈</a></td>
+              </tr>
+              <tr> 
+                <td style="padding-top:5px;"><a href="/shop/common/wbest.aspx?BranchType=7" class="blue01">베스트셀러</a></td>
+              </tr>
+              <tr> 
+                <td><a href="/shop/common/wnew.aspx?BranchType=7" class="blue01" >새로나온책</a></td>
+              </tr>
+              <tr> 
+                <td><a href="/events/wevent_foreign.aspx?pn=20131122_outlet" class="blue01">특가도서</a></td>
+              </tr>
+              <tr> 
+                <td><a href="/events/wevent_main_foreign.aspx" class="blue01">이벤트</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=67970" class="blue01"><strong><font color="#e9308e">LEXILE 
+                  지수별 <br />
+                  원서 읽기</font></strong></a></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div style="position:relative;float:right"> 
+    <a href="http://www.aladin.co.kr/events/wevent.aspx?EventId=158914"><img src="http://image.aladin.co.kr/img/banner/header/20161208_sales.png" ></a>
+
+    </div>
+    
+  </div>
+</div>
+</li><li class="set2se"></li><li id="#head_ebook_layer"><a href="http://ebook.aladin.co.kr/home/webookmain.aspx" title="eBook"><img alt="eBook" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m014.gif" /></a>
+<div style="position:relative;z-index:99999;"> 
+  <div id="head_ebook_layer" class="hdr" style="width:633px;"> 
+    <div style="position:relative;float:left"> 
+      <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">
+        <tr> 
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38424" class="gr03">유아</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38406" class="gr03">어린이</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38407" class="gr03">청소년</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38413" class="gr03">좋은부모</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38409" class="gr03">가정/요리/뷰티</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56388" class="gr03">건강/취미/레저</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38408" class="gr03">여행</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38398" class="gr03">경제경영</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38400" class="gr03"><strong>자기계발</strong></a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38396" class="gr03">소설/시/희곡</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56387" class="gr03"><strong>에세이</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38403" class="gr03">인문학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38404" class="gr03">사회과학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38397" class="gr03">역사</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38402" class="gr03">예술/대중문화</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38405" class="gr03">과학</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38414" class="gr03"><strong>고전</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38411" class="gr03">외국어</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56549" class="gr04">판타지소설</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56553" class="gr04">무협소설</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56555" class="gr04">로맨스소설</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38416" class="gr04">만화</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://ebook.aladin.co.kr/shop/common/wbest.aspx?BranchType=9&BestType=EBookBestseller' class="blue01">베스트셀러</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://ebook.aladin.co.kr/shop/common/wnew.aspx?BranchType=9' class="blue01">새로나온 
+                  전자책</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=52153&SortOrder=2' class="blue01">무료 
+                  전자책</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://ebook.aladin.co.kr/events/wevent_ebook.aspx?pn=150513_halfebook' class="blue01">반값 전자책</a></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div style="position:relative;float:right"> 
+    <a href="http://www.aladin.co.kr/events/wevent.aspx?EventId=161891"><img src="http://image.aladin.co.kr/img/banner/header/layer_170407_ebook2.png" ></a>
+
+    </div>
+    
+  </div>
+</div>
+
+
+</li><li class="set2se"></li><li id="#head_used_layer"><a href="http://www.aladin.co.kr/home/wusedshopmain.aspx" title="온라인중고샵"><img alt="온라인중고샵" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m21_on.gif"/></a>
+
+<div style="position:relative;z-index:99999;"> 
+  <div id="head_used_layer" class="hdr" style="width:750px;"> 
+    <div style="position:relative;float:left"> 
+      <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">
+        <tr> 
+          <td width="114" valign="top"><table>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=13789&ItemType=100' class="gr03">유아</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1108&ItemType=100' class="gr03"><strong>어린이</strong></a></td>
+              </tr>             
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1137&ItemType=100' class="gr03">청소년</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=2030&ItemType=100' class="gr03">좋은부모</a></td>
+              </tr>
+	       <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=55889&ItemType=100' class="gr03"><b>에세이</b></a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1230&ItemType=100' class="gr03">가정/요리/뷰티</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=656&ItemType=100' class="gr03"><b>인문학</b></a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=798&ItemType=100' class="gr03">사회과학</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=74&ItemType=100' class="gr03">역사</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=517&ItemType=100' class="gr03">예술/대중문화</a></td>
+              </tr>			  
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=8257&ItemType=100' class="gr03">대학교재</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"> <table>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1&ItemType=100' class="gr03"><strong>소설/시/희곡</strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=170&ItemType=100' class="gr03">경제경영</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=336&ItemType=100' class="gr03">자기계발</a></td>
+              </tr>
+	       <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1383&ItemType=100' class="gr03">수험서/자격증</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1322&ItemType=100' class="gr03">외국어</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=351&ItemType=100' class="gr03">컴퓨터/모바일</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=2913&ItemType=100' class="gr03">잡지</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=100' class="gr04" style="letter-spacing:-1px;">중고 
+                  국내도서<img src="http://image.aladin.co.kr/img/header/2010/bn_more.gif" width="14" height="11"></a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=101' class="gr04">중고 
+                  음반 <img src="http://image.aladin.co.kr/img/header/2010/bn_more.gif" width="14" height="11"></a></td>
+              </tr>
+              <tr> 
+                <td style="letter-spacing:-2px;"><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=102' class="gr04">중고 
+                  DVD/블루레이<img src="http://image.aladin.co.kr/img/header/2010/bn_more.gif" width="14" height="11"></a></td>
+              </tr>
+          
+			  
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=106' class="gr04">중고 
+                  외국도서<img src="http://image.aladin.co.kr/img/header/2010/bn_more.gif" width="14" height="11"></a></td>
+              </tr>
+                
+            </table></td>
+          <td width="114" valign="top"><table>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/common/wbest.aspx?BranchType=6&BestType=AladinB2CUsedBest' class="blue01">많이 
+                  판매된 중고</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/common/wbest.aspx?BranchType=6&BestType=YearlyUsedBest' class="blue01">역대 
+                  베스트 중고</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/UsedShop/wnewitem.aspx?CID=0&ItemType=100' class="blue01">새로 
+                  등록된 상품</a></td>
+              </tr>
+              
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/UsedShop/wnewitem.aspx?ItemType=100&ViewRowsCount=25&ViewType=Detail&PublishMonth=0&SortOrder=6&page=1&UsedShop=0&PublishDay=84&CID=0&PriceFilterMin=1001&PriceFilterMax=2000' class="blue01">2000원샵</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://used.aladin.co.kr/events/wevent.aspx?EventId=152337" class="blue01">최종 땡처리</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/scm/usedshop/wfavorite.aspx' class="blue01">단골 
+                  판매자 보기</a></td>
+              </tr>
+              
+            </table></td>
+          
+          <td width="114" valign="top"><table>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/scm/wmain.aspx' class="blue01"><strong><font color="#e9308e">판매자매니저</font></strong></a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/usedshop/wc2b_gate_step2.aspx?search=1' class="blue01">알라딘에 
+                  중고팔기</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/shop/usedshop/wc2b_gate.aspx' class="blue01">판매가능여부 &<br> 판매가격 확인하기</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://used.aladin.co.kr/cs_center/wcs_faq_list.aspx?CategoryId=237&UpperId=237' class="blue01">온라인중고샵 
+                  FAQ</a></td>
+              </tr>
+            </table></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+
+	 <div style="position:absolute;bottom:0;right:0">
+		<a href="http://blog.aladin.co.kr/aladinservice/9228804"><img src="http://image.aladin.co.kr/img/banner/header/layer_20170321_usedbooksale.png" ></a>
+
+        </div>
+    
+  </div>
+</div>
+</li><li id="#head_usedstore_layer"><a href="http://off.aladin.co.kr/usedstore/wgate.aspx" title="중고매장"><img alt="중고매장" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m18.gif"/></a>
+
+<style type="text/css">
+<!--
+.hdr_in {float:left; width:90px; margin-right:5px; margin-bottom:14px;text-align:left!important; }
+.hdr_in2 {float:left; width:100px; margin-bottom:14px;text-align:left!important; }
+.hdr_in3 {float:left; width:145px; margin-bottom:14px;text-align:left!important; }
+.hdr_in4 {float:left; width:80px; margin-bottom:14px;text-align:left!important; }
+.hdr_in li, .hdr_in2 li, .hdr_in3 li, .hdr_in4 li{padding-bottom:2px!important;display:block!important;font-size:12px!important;height:auto!important;line-height:18px!important;float:none!important; }
+
+#head_usedstore_layer a:link { text-decoration: none;color: #444;}
+#head_usedstore_layer a:visited {color: #444444;text-decoration: none;}
+#head_usedstore_layer a:hover { text-decoration: none;color: #444; text-decoration: underline;}
+#head_usedstore_layer a.blue01:link {  color:  #1486c7; text-decoration: none;}
+#head_usedstore_layer a.blue01:visited {  color:  #1486c7; text-decoration: none;}
+#head_usedstore_layer a.blue01:hover {  color: #1486c7; text-decoration: underline;}
+
+
+-->
+</style>
+
+
+<div style="position:relative;z-index:99999;">
+    <div id="head_usedstore_layer" class="hdr" style="width:685px;">
+        <div style="padding:14px 16px;">
+        <!-- 서울그룹 -->
+        <!-- 그룹 -->
+        <div class="hdr_in">
+            <h4 style="margin:0; padding:0 0 2px 0; font-size:12px;line-height:18px!important;">서울</h4>
+            <ul>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=gangnam'>강남점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=geondae'>건대점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=nowon'>노원점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=daehakro'>대학로점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=suyu'>수유점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=sillim'>신림점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=sinchon'>신촌점</a></li>
+		<li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=yeonsinnae'>연신내점</a></li>
+           </ul>
+        </div>
+        <!-- 그룹// -->
+  
+        <!-- 그룹 -->
+        <div class="hdr_in">
+            <ul style="margin-top:20px;">             
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=jamsil'>잠실롯데<p style="margin:0; padding:2px 0 0 0;">월드타워점</p></a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=sincheon'>잠실신천점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=jongno'>종로점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=hapjeong'>합정점</a></li>
+           </ul>
+        </div>
+        <!-- 그룹// -->
+        <!-- 서울그룹// -->
+  
+        <!-- 경기그룹 -->
+        <!-- 그룹 -->
+        <div class="hdr_in3">
+           <h4 style="margin:0; padding:0 0 2px 0; font-size:12px;line-height:18px!important;">경기</h4>
+           <ul>
+		        <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=bucheon'>부천점</a></li>
+		        <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=buksuwon'>북수원 홈플러스점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=bundang'>분당서현점</a></li>
+		        <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=yatap'>분당야탑점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=sanbon'>산본점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=suwon'>수원점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=ilsan'>일산점</a></li>
+           </ul>
+        </div>
+        <!-- 그룹// -->
+        <!-- 경기그룹// -->
+  
+        <!-- 광역시 등그룹 -->
+        <!-- 그룹 -->
+        <div class="hdr_in">
+            <h4 style="margin:0; padding:0 0 2px 0; font-size:12px;line-height:18px!important;">광역시 등</h4>
+            <ul>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=gwangju'>광주점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=daegu'>대구동성로점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=sangin'>대구상인점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=daejeoncityhall'>대전시청역점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=daejeon'>대전은행점</a></li>
+		<li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=killy'>부산경성대<br>부경대역점</a></li>
+		<li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=deokcheon'>부산덕천점</a></li>		
+            </ul>
+        </div>  
+        <!-- 그룹// -->
+  
+        <!-- 그룹 -->
+        <div class="hdr_in">
+            <ul style="margin-top:20px;">
+		        <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=dongbo'>부산서면점</a></li>	
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=centum'>부산센텀점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=ulsan'>울산점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=guwol'>인천구월점</a><img src="http://image.aladin.co.kr/img/shop/2012/icon_new.gif" border="0"></li>
+		        <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=gyesan'>인천계산점</a></li>
+                
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=jeonju'>전주점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=cheonan'>천안점</a></li>
+                <li><a href='http://used.aladin.co.kr/usedstore/wStoreHelp.aspx?offcode=cheongju'>청주점</a></li>
+            </ul>
+        </div>
+        <!-- 그룹// -->
+        <!-- 광역시 등 그룹// -->
+  
+        <!-- 다른 메뉴 -->
+        <ul class="hdr_in2">
+            <li><a href='http://used.aladin.co.kr/cs_center/wcs_faq_list.aspx?CategoryId=238&UpperId=238' class="blue01">중고매장 FAQ</a></li>
+            <li><a href='http://used.aladin.co.kr/cs_center/wcs_faq_best.aspx?BestType=2' class="blue01">판매가이드</a></li>
+            <li><a href='http://used.aladin.co.kr/shop/usedshop/wc2b_gate.aspx' class="blue01">판매가능여부 &amp;<br />판매가격 확인하기</a></li>
+        </ul>
+   
+
+        <!-- 다른 메뉴// -->
+        </div>
+    </div>
+</div></li><li class="set2se"></li><li id="#"><a href="http://www.aladin.co.kr/home/wcoffeemain.aspx" title="커피"><img alt="커피" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m29.gif" /></a></li><li class="set2se"></li><li id="#head_music_layer"><a href="http://music.aladin.co.kr/home/wmusicmain.aspx" title="음반"><img alt="음반" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m04.gif" /></a>
+<div style="position:relative;z-index:99999;">
+    <div id="head_music_layer" class="hdr" style="width:545px;">
+    <div style="position:relative;float:left">
+    <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">  
+    <tr> 
+        <td width="114" valign="top"><table>
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5911&BrowseTarget=List" class="gr03">가요</a></td></tr>
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5915" class="gr03"><strong>클래식</strong></a></td>
+          </tr>             
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5914&BrowseTarget=List" class="gr03">팝</a></td></tr>              
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5916&BrowseTarget=List" class="gr03">재즈</a></td></tr> 
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5918&BrowseTarget=List" class="gr03">국악</a></td></tr>               
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=79050&BrowseTarget=List" class="gr03">월드뮤직</a></td></tr>             
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5919&BrowseTarget=List" class="gr03">종교/명상/기타</a></td></tr> 
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=9280&BrowseTarget=List" class="gr03">J-POP</a></td></tr> 
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5917&BrowseTarget=List" class="gr03">OST</a></td></tr> 
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=49484&BrowseTarget=List" class="gr03">LP</a></td></tr> 			
+
+        </table></td>
+        <td width="114" valign="top"><table>
+            <tr><td><a href='http://music.aladin.co.kr/shop/common/wbest.aspx?BranchType=2' class="blue01">베스트셀러</a></td></tr> 
+            <tr><td><a href='http://music.aladin.co.kr/shop/common/wnew.aspx?BranchType=2' class="blue01">새로나온음악</a></td></tr> 
+            
+                        
+            <tr><td><a href='http://music.aladin.co.kr/shop/music/wpreorder.aspx' class="blue01">예약음반</a></td></tr> 
+
+            <tr><td><a href='http://music.aladin.co.kr/events/wevent_main_music.aspx' class="blue01">이벤트</a></td></tr> 
+            <tr><td><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=17602" class="blue01">해외구매</a></td></tr> 
+            
+            
+        </table></td>
+    </tr>
+</table>
+    </div>
+    
+    
+    <div style="position:relative;float:right">
+	<a href="http://music.aladin.co.kr/shop/wproduct.aspx?ItemId=106485085"><img src="http://image.aladin.co.kr/img/banner/header/layer_170410_phantom.png" ></a>
+
+    </div>
+    
+    </div>
+</div></li><li class="set2se"></li><li id="#head_dvd_layer"><a href="http://dvd.aladin.co.kr/home/wdvdmain.aspx" title="DVD"><img alt="DVD" src="http://image.aladin.co.kr/img/header/2011/global/global_set2_m22.gif" /></a>
+
+<div style="position:relative;z-index:99999;"> 
+  <div id="head_dvd_layer" class="hdr" style="width:710px;"> 
+    <div style="position:relative;float:left"> 
+      <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">
+        <tr> 
+          <td width="114" valign="top"><table>
+              <tr> 
+                <td><strong>DVD</strong></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6547" class="gr03">드라마/코미디</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=17280" class="gr03">TV시리즈</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6551" class="gr03">액션/어드벤쳐</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6684" class="gr03">S.F./판타지</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6545" class="gr03">공포/스릴러</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6555" class="gr03">음악DVD</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=15837" class="gr03">취미/스포츠</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6546" class="gr03">교양/다큐멘터리</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"><table>
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6549" class="gr03">유아/아동</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6550" class="gr03">애니메이션</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6554" class="gr03">박스세트</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=17635" class="gr03">제작국가별</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6548" class="gr03">성인</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=26649" class="gr03">VHS</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=26650" class="gr03">VCD</a></td>
+              </tr>
+            </table></td>
+          <td width="114" valign="top"><table>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=16704" class="gr03"><strong>블루레이</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=65717" class="gr03">3D 
+                  블루레이</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=31469" class="gr03">공포/스릴러</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=31474" class="gr03">다큐멘터리</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=31467" class="gr03">드라마/코미디</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=31471" class="gr03">애니메이션</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=31470" class="gr03">액션/SF</a></td>
+              </tr>
+              <tr> 
+                <td><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=31473" class="gr03">음악</a></td>
+              </tr>
+            </table></td>
+          <td width="100" valign="top"><table>
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/common/wbest.aspx?BranchType=3' class="blue01">베스트셀러</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/common/wnew.aspx?BranchType=3' class="blue01" >새로나온DVD</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/dvd/wpreorder.aspx' class="blue01">예약DVD</a></td>
+              </tr>
+  
+              
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/wbrowse_event.aspx?CID=50577' class="blue01">예약알림 
+                  신청</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/events/wevent_main_dvd.aspx' class="blue01">이벤트</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/wbrowse_event.aspx?ViewRowsCount=25&ViewType=Detail&PublishMonth=0&SortOrder=5&page=1&Stockstatus=1&PublishDay=84&CID=16407&CustReviewRankStart=&CustReviewRankEnd=&CustReviewCountStart=&CustReviewCountEnd=&PriceFilterMin=&PriceFilterMax=' class="blue01">초특가아울렛</a></td>
+              </tr>
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/wbrowse_event.aspx?CID=17759' class="blue01">단독특가</a></td>
+              </tr>
+  
+              
+              <tr> 
+                <td><a href='http://dvd.aladin.co.kr/shop/usedshop/wshopitem.aspx?SC=0&SortOrder=6&ViewType=Detail&ViewRowsCount=25&PublishMonth=0&PublishDay=84&UsedShop=0&DiscountPercent=20&BranchType=1&Stockstatus=1&start=main&&CID=16704&ItemType=102' class="blue01">중고블루레이</a></td>
+              </tr>							  
+            </table></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div style="position:relative;float:right"> 
+    <a href="http://dvd.aladin.co.kr/shop/wbrowse_event.aspx?CID=133721"><img src="http://image.aladin.co.kr/img/banner/header/layer_170407_times.png" ></a>
+
+    </div>
+    
+  </div>
+</div>
+</li><li class="set2se"></li><li id="#"><a href="http://www.aladin.co.kr/home/wonlymain.aspx" title="알라딘굿즈"><img alt="알라딘굿즈" src="http://image.aladin.co.kr/img/header/new/top_goods.gif"/></a>
+<div style="position:relative;z-index:99999;">
+    <div id="head_gift_layer" class="hdr" style="width:250px;">
+    <table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">  
+    <tr>
+        <td width="114" valign="top"><table>            
+            <tr><td><a href='http://www.aladin.co.kr/shop/gift/wbrowsemain.aspx' class="gr04">기프트 전체 <img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11"></a></td></tr> <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=32027" class="gr03">책관련상품</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=12684" class="gr03">디자인문구</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=12690" class="gr03">학습/교구/완구</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=26643" class="gr03">사무용품/컴퓨터</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=12685" class="gr03">디지털/가전</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=13311" class="gr03">리빙/인테리어</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=12689" class="gr03">패션/주얼리/소품</a></td></tr>            
+            <tr><td><a href='http://www.aladin.co.kr/shop/wbrowse.aspx?CID=49120' class="gr03">국내/수입식품</a></td></tr> 
+        </table></td> 
+      
+          <td width="114" valign="top"><table>            
+            <tr><td><a href='http://www.aladin.co.kr/shop/common/wbest.aspx?BranchType=5' class="blue01">기프트 베스트셀러</a></td></tr> 
+            <tr><td><a href='http://www.aladin.co.kr/shop/common/wnew.aspx?BranchType=5&ViewRowsCount=48&ViewType=Simple' class="blue01" >새로나온기프트</a></td></tr> 
+            <tr><td><a href='http://www.aladin.co.kr/events/wevent_main_gift.aspx' class="blue01">기프트 이벤트</a></td></tr> 
+            <tr><td><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=32018" class="blue01">알라딘 직배송샵</a></td></tr>             
+
+            
+             <tr><td><a href='http://www.aladin.co.kr/home/wphotobookmain.aspx' class="blue01"><strong><font color="#e9308e">포토북/인화</font></strong></a></td>
+          </tr> 
+          <!--
+            <tr><td><a href='http://www.aladin.co.kr/home/wfarmmain.aspx' class="blue01"><strong><font color="#e9308e">친환경 식품</font></strong></a></td>
+          </tr> 
+          -->      
+        </table></td>    
+    </tr> 
+</table>
+</div>
+</div></li><li class="set2se"></li><li id='#head_bookstore_layer'><a href='http://bookple.aladin.co.kr/hotnews' target='_blank'><img src='http://image.aladin.co.kr/img/header/2011/global/global_set2_m27.gif' ></a>
+<div style="position:relative;z-index:99999;">
+    <div id="head_bookstore_layer" class="hdr" style="width:100px;">
+<table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">  
+    <tr> 
+        <td width="90" valign="top">
+            <table>
+            <tr><td><a href="http://blog.aladin.co.kr" class="gr03">알라딘서재</a></td></tr> 
+            <tr><td><a href="http://blog.aladin.co.kr/MyBlog" class="gr03">나의서재</a></td></tr>             
+            <tr><td><a href="http://story.aladin.co.kr" class="gr03">창작블로그</a></td></tr> 
+            <tr><td><a href="http://blog.aladin.co.kr/Chronicle" class="gr03">책연표</a></td></tr> 
+            <tr><td><a href="http://blog.aladin.co.kr/town/BookCalendar" class="gr03">북캘린더</a></td></tr>             
+            </table>
+        </td> 
+    </tr>
+</table>
+</div>
+</div></li><li id='#head_bookstore_layer'><a href='http://blog.aladin.co.kr'><img src='http://image.aladin.co.kr/img/header/2011/global/global_set2_m28.gif' ></a>
+<div style="position:relative;z-index:99999;">
+    <div id="head_bookstore_layer" class="hdr" style="width:100px;">
+<table border="0" cellspacing="4" cellpadding="5" style="margin:5px 0 0 10px">  
+    <tr> 
+        <td width="90" valign="top">
+            <table>
+            <tr><td><a href="http://blog.aladin.co.kr" class="gr03">알라딘서재</a></td></tr> 
+            <tr><td><a href="http://blog.aladin.co.kr/MyBlog" class="gr03">나의서재</a></td></tr>             
+            <tr><td><a href="http://story.aladin.co.kr" class="gr03">창작블로그</a></td></tr> 
+            <tr><td><a href="http://blog.aladin.co.kr/Chronicle" class="gr03">책연표</a></td></tr> 
+            <tr><td><a href="http://blog.aladin.co.kr/town/BookCalendar" class="gr03">북캘린더</a></td></tr>             
+            </table>
+        </td> 
+    </tr>
+</table>
+</div>
+</div></li></ul>
+        </div>
+        <div id="global_set3_2" style="width: 300px; ">
+            <ul><li class="set3mf"><a href="#" title="로그인"><img alt="로그인" src="http://image.aladin.co.kr/img/header/2011/global_set3_login.gif" onclick="window.open('http://www.aladin.co.kr/login/wlogin_popup.aspx','Login','width=780,height=500,status=0');" ></a></li><li class="set3se"></li><li class="set3m"><a href="https://www.aladin.co.kr/account/waccount_makenew.aspx" title="회원가입"><img alt="회원가입" src="http://image.aladin.co.kr/img/header/2011/global_set3_join.gif"></a></li><li class="set3se"></li><li id="#head_myaccount_layer" class="set3m"><div style="height:20px;width:58px;"><a href="https://www.aladin.co.kr/account/wmaininfo.aspx?pType=MyAccount" title="마이페이지"><img alt="마이페이지" src="http://image.aladin.co.kr/img/header/2011/global_set3_m01.gif"></a></div><div id="head_myaccount_layer" style="width:100px;" class="hdr"><table border="0" cellspacing="4" cellpadding="3"><tr><td valign="top"><table><tr><td><a href="https://www.aladin.co.kr/account/wmaininfo.aspx?pType=MyAccount">나의계정</a></td></tr><tr><td><a href="https://www.aladin.co.kr/account/wmaininfo.aspx?pType=OrdersHistoryList">주문/배송조회</a></td></tr><tr><td><a href="/shop/wsafebasket.aspx">보관함</a></td></tr><tr><td><a href="http://blog.aladin.co.kr/MyBlog/orderlist">구매함</a></td></tr><tr><td><a href="http://blog.aladin.co.kr/MyBlog">나의서재</a></td></tr></table></td></tr></table></div></li><li class="set3se"></li><li class="set3m"><a href="http://www.aladin.co.kr/cs_center/wcs_main.aspx" title="고객센터"><img title="고객센터" src="http://image.aladin.co.kr/img/header/2011/global_set3_m02.gif"></a></li><li class="set3se"></li><li class="set3end" id="headerBasketBtn"><a href="http://www.aladin.co.kr/shop/wbasket.aspx" title="장바구니"><div class="headerBasketDiv"><img src="http://image.aladin.co.kr/img/header/2011/space.gif" width="39" height="8"><span id="basketItemCount" style="vertical-align:top;">(0)</span></div></a><div id="head_layer_accunt_container" style="position:relative;z-index:9999;margin-top:-5px;"><div id="headerBasketLayerWrap" style="display:none;"><div id="headerBasketLayer" class="nh_basket"><table width="243" border="0" cellspacing="0" cellpadding="0"><tr><td><img src="http://image.aladin.co.kr/img/header/2010/nh_basket01.gif" width="243" height="7" style="visibility:hidden"></td> </tr><tr><td><div id="headerBasketItems"><div style="text-align:center; vertical-align:baseline"><img src="http://image.aladin.co.kr/img/header/2010/loading_on.gif" width="16" height="16"/></div></div></td> </tr><tr><td><img src="http://image.aladin.co.kr/img/header/2010/nh_basket01.gif" width="243" height="7" style="visibility:hidden"></td></tr></table></div></div></div></li></ul>
+        </div>
+    </div>
+</div>
+<div style="clear: both;"></div>
+
+<!-- 글로벌 네비게이션//-->
+<!-- 로고&검색&광고-->
+
+
+<table width="930" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto;" >
+    <tr>
+        <td width="192"><a href="http://www.aladin.co.kr/home/start.aspx" id="logoBtn" title="알라딘 첫화면으로 가기"><img id="logoImg" src="http://image.aladin.co.kr/img/header/2011/aladin_logo_new.gif" alt="알라딘 첫화면으로 가기" title="알라딘 첫화면으로 가기" border="0" ></a></td>
+        <td width="546" valign="top">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 검색필드 -->
+            <form id="QuickSearch" name="QuickSearch" action="http://www.aladin.co.kr/search/wsearchresult.aspx" method="get" style="display:inline;" autocomplete="off" IsUsedStore="0">
+            <div id="global_search">
+            
+                <dl><dt id="searchTargetDesc" style="cursor:pointer;">통합검색</dt></dl>
+                <div style="display:none;position:absolute;" id="searchTargetDropDown">
+                    <div style="position:absolute;background-color:White;top:34px;left:18px;">
+                        
+    
+        <table style="border:2px solid #5397D0;" cellpadding="0" cellspacing="2" width="88px;">
+    
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('All','통합검색',0); return false;">통합검색</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Book','국내도서',0); return false;">국내도서</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Foreign','외국도서',0); return false;">외국도서</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('EBook','eBook',0); return false;">eBook</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Used','온라인중고',0); return false;">온라인중고</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('UsedStore','중고매장',0); return false;">중고매장</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Coffee','커피',0); return false;">커피</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Music','음반',0); return false;">음반</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('DVD','DVD/BD',0); return false;">DVD/BD</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Gift','알라딘굿즈',0); return false;">알라딘굿즈</a></td></tr>
+
+    <tr><td><img src="/ucl_editor/img_secur/header/2011/eventlayer_se.gif"></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Talktalk','서재검색',0); return false;">서재검색</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('Tag','서재태그',0); return false;">서재태그</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('MyReview','마이리뷰',0); return false;">마이리뷰</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('MyList','마이리스트',0); return false;">마이리스트</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('MyPaper','마이페이퍼',0); return false;">마이페이퍼</a></td></tr>
+
+    <tr><td><a href="#" class="blue02" onclick="javascript:searchTargetChange('MyLibrary','서재',0); return false;">서재</a></td></tr>
+
+    
+        </table>   
+    
+                    </div>
+                </div>
+                <div id="re_sh_form" style="padding-left:10px;">
+                    <input type="hidden" id="SearchTarget" name="SearchTarget" value="All"/>
+                    <input type="text" id="SearchWord" name="SearchWord" class="inputbox_new" style="border:0px solid white; ime-mode:active;" value="" onClick="javascript:searchChk();"/>
+                    
+                    <script type="text/javascript">
+                        // 검색어 키워드.
+                        $j(document).ready(function () {
+                            try { if (swbanner_window_onload) swbanner_window_onload(); } catch (e) { }
+                        });
+				    </script>
+				    
+                </div>
+                <div id="qs_div_icon" style="float:left; width:29px;"><img src="http://image.aladin.co.kr/img/header/2011/btn_search_drop2.gif" /></div>
+            
+                <input type="image" src="http://image.aladin.co.kr/img/header/b_search.gif" alt="검색" title="검색" class="searchBtn" />
+                
+                <a href="http://www.aladin.co.kr/search/wsearch.aspx?SearchTarget=Used"><img id="DetailSearch" src="http://image.aladin.co.kr/img/header/2011/btn_searchmore2.gif" alt="상세검색" title="상세검색" class="searchBtn2" style="position:absolute;right:5px;top:15px;" /></a>
+                
+            </div>            </form>
+            <!-- 검색필드 -->
+            
+            <script type="text/javascript">
+            
+                // 중복 submit 방지
+                var formSubmited = false;
+                
+                $j('#QuickSearch').submit(QuickSearch_Submit);
+                
+                function QuickSearch_Submit(e)
+                {
+                    if (formSubmited == true)
+                    {   // 중복 submit 체크
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return;
+                    }
+
+                    var f = $j('#QuickSearch');
+                    if (f.attr("isusedstore") == 1) {
+                        if (f.find("#KeyTag").length > 0) {
+                            f.attr("action", "/search/wsearchresult.aspx");
+                            f.find("#SearchTarget").val("UsedStore");
+                        } else {
+                            f.attr("action", "/usedstore/wsearchresult.aspx");
+                            f.find("#SearchTarget").val("Used");
+                        }
+                    }
+
+                    formSubmited = true;
+                }
+            
+            </script>
+            
+        </td>
+        <td width="192" style="text-align:right !important;">
+            
+            <a href='/banner/wadbanner_redirect.aspx?PubBannerId=600724' title='헤더배너'><img title='헤더배너' alt='헤더배너' src='http://image.aladin.co.kr/img/ad/banner/2017/170109_head_book02.jpg' border=0/></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </td>
+    </tr>
+</table>
+
+<!-- 새 헤더 메뉴-->
+
+
+<div id="re_topmenu_wrap">
+    <table width="930" align="center" cellpadding="0" cellspacing="0" style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td width="128">
+                <!-- 헤더 레이어 메뉴 -->
+                <div id="head_layer_menu_container">
+                
+                    <div style="height:32px;"><img src="http://image.aladin.co.kr/img/header/2011/mallmenu_total.gif" alt="분야보기" width="116" style="cursor:pointer;" title="분야보기"></div>
+                
+
+<div id="head_layer_menu" style="width: 948px;" class="hdm">
+    <table width="948" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="260" valign="top">
+                <div class="categorysub_layer_t"><a href='http://www.aladin.co.kr/home/wbookmain.aspx'>국내도서</a></div>
+                <div class="categorysub_layer_new2">
+                    <ul>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=13789" class="cate1">유아</a></li>         			 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1108" class="cate1"><strong>어린이</strong></a></li> 
+                        
+                        
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=17195" class="cate1">전집/중고전집</a></li> 			                          
+                        
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1137" class="cate1">청소년</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2030" class="cate1">좋은부모</a></li> 			  
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=50246" class="cate1"><strong>초등학교참고서</strong></a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=76000" class="cate1">중학교참고서</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=76001" class="cate1"><strong>고등학교참고서</strong></a></li>                        
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1196" class="cate1">여행</a></li>			 	                
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1230" class="cate1">가정/요리/뷰티</a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=55890" class="cate1">건강/취미/레저</a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=4395" class="cate1">사전/기타</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2913" class="cate1">잡지</a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2551" class="cate1">만화</a></li>
+                        <li><a href='http://www.aladin.co.kr/shop/wbrowse.aspx?CID=2105' class="cate1">고전</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1" class="cate1"><strong>소설/시/희곡</strong></a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=112011" class="cate1"><strong>장르소설</strong></a></li>						
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=55889" class="cate1">에세이</a></li>               
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=656" class="cate1"><strong>인문학</strong></a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=798" class="cate1">사회과학</a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=74" class="cate1">역사</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=987" class="cate1">과학</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=517" class="cate1">예술/대중문화</a></li>			 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1237" class="cate1">종교/역학</a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=170" class="cate1"><strong>경제경영</strong></a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=336" class="cate1">자기계발</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1322" class="cate1">외국어</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=351" class="cate1">컴퓨터/모바일</a></li>  			  			
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=8257" class="cate1">대학교재</a></li> 
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=1383" class="cate1">수험서/자격증</a></li>
+                        <li><a href="http://www.aladin.co.kr/shop/wbrowse.aspx?CID=34582" class="cate1">공무원 수험서</a></li>                        
+                    </ul>
+                </div>
+                 
+                 
+
+                
+             
+                
+                
+                
+            </td>
+            
+            <td width="8" background="http://image.aladin.co.kr/img/header/2011/icon_line.gif"></td>
+            <td width="260" valign="top">
+                <div class="categorysub_layer_t"><a href='http://foreign.aladin.co.kr/home/wforeignmain.aspx'>외국도서</a></div>
+                <div class="categorysub_layer_new2">
+                
+                
+                
+                    <ul>
+                        <li><strong>영미도서</strong></li> 
+                    
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90842" class="cate1">소설/시/희곡</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90861" class="cate1">ELT/어학/사전</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90853" class="cate1">인문/사회</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90835" class="cate1">경제경영</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90854" class="cate1">자기계발</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90855" class="cate1">자연과학</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90859" class="cate1">컴퓨터</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90848" class="cate1">예술/대중문화</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90831" class="cate1">가정/원예/인테리어</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90836" class="cate1">공예/취미/수집</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90846" class="cate1">여행</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90833" class="cate1">건강/스포츠</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=90858" class="cate1">청소년</a></li> 
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=25557" class="cate1">해외잡지</a></li> 
+
+                        
+                        <li style="padding-top:7px;"><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28261" class="gr03"><strong>일본도서</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>
+                        
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28402" class="gr03">잡지</a></li>
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28375" class="gr03">코믹</a></li>
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28262" class="gr03">문학</a></li>
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28338" class="gr03">실용/취미/생활</a></li>
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=115123" class="gr03">애니메이션 굿즈</a></li>						
+                        
+                        
+                        <li style="padding-top:7px;"><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28492" class="gr03"><strong>중국도서</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>
+                        
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=35597" class="gr03">소설</a></li>
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=35598" class="gr03">중국어 교재</a></li>
+                        
+
+						
+                           			
+                    </ul>
+                    
+                    
+                    
+                    <ul>
+                      
+                        <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106165" class="gr03"><strong>어린이</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>  
+                        
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106183" class="gr03">캐릭터</a></li>   		
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106168" class="gr03">그림책</a></li> 
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106172" class="gr03">리더스</a></li> 
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106181" class="gr03">챕터북</a></li> 	
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106171" class="gr03">동화책</a></li> 
+               <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106177" class="gr03">오디오북</a></li>  	
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106175" class="gr03">어린이사전</a></li> 		
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106166" class="gr03">개념학습</a></li>             
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106185" class="gr03">코스북</a></li> 			
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106176" class="gr03">영어학습</a></li>       
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106167" class="gr03">교과학습</a></li>     				                  
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106173" class="gr03">미국교과서</a></li>     
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106174" class="gr03">수상작</a></li>     
+                <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=106178" class="gr03">제2외국어/이중언어</a></li>     								                        
+   
+
+
+              <li style="padding-top:7px;"><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28253" class="cate1"><strong>기타 언어권</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li> 
+              <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28256" class="gr03">프랑스 도서</a></li>
+              <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28255" class="gr03">독일 도서</a></li>
+              <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28254" class="gr03">스페인 도서</a></li>
+              <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28257" class="gr03">베트남 도서</a></li>              
+              <li><a href="http://foreign.aladin.co.kr/shop/wbrowse.aspx?CID=28259" class="gr03">기타 도서</a></li>                            
+                        
+
+                        
+                    </ul>
+                </div>
+            </td>
+            
+            <td width="8" background="http://image.aladin.co.kr/img/header/2011/icon_line.gif"></td>
+            <td width="132" valign="top">
+                <div class="categorysub_layer_t"><a href='http://ebook.aladin.co.kr/home/webookmain.aspx'>eBook</a></div>
+                <div class="categorysub_layer_new2">
+                    <ul>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38396' class="cate1"><strong>소설/시</strong></a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56553' class="cate0">무협</a> | <a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56555' class="cate0">로맨스</a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56549' class="cate1">판타지/SF</a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=56387' class="cate1">에세이</a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38400' class="cate1"><strong>자기계발</strong></a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38398' class="cate1">경제경영</a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38404' class="cate1">사회과학</a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38403'  class="cate0">인문학</a> </li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38397'  class="cate0">역사</a></li>
+                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38407'  class="cate0">청소년</a></li>                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38402'  class="cate0">예술/대중문화</a></li>                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38410'  class="cate0">종교/역학</a></li>                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38416'  class="cate0">만화</a></li>                        <li><a href='http://ebook.aladin.co.kr/shop/wbrowse.aspx?CID=38406'  class="cate0"><strong>어린이</strong></a></li>                          
+                    </ul>
+                </div>
+                <br clear="all">
+                <div style="padding: 12px 0 0 0"></div>
+                 <div class="categorysub_layer_t"><a href='#'>eBook 뷰어</a></div>
+                <div class="categorysub_layer_new2">
+                   <ul>
+                        <li><a href="http://blog.aladin.co.kr/cscenter/4509741" class="cate1">아이폰 뷰어 </a></li>
+                        <li><a href="http://blog.aladin.co.kr/cscenter/4499506" class="cate1">안드로이드 뷰어</a></li>                        <li><a href="http://blog.aladin.co.kr/cscenter/5843985" class="cate1">e-Crema touch</a></                        <li><a href="http://blog.aladin.co.kr/cscenter/4261763" class="cate1">PC 뷰어</a></li>
+                    </ul>                                        
+                </div>
+            </td>
+            
+            <td width="8" background="http://image.aladin.co.kr/img/header/2011/icon_line.gif"></td>
+            <td width="132" valign="top">
+            <div class="categorysub_layer_t"><a href='http://used.aladin.co.kr/home/wusedshopmain.aspx'>온라인 중고샵</a></div>
+                <div class="categorysub_layer_new2">
+                    <ul>
+                        <li><a href='http://used.aladin.co.kr/usedstore/wgate.aspx' class="blue01"><strong><font color="#e9308e">중고매장</font></strong></a></li>            
+                        <li style="padding-top:7px;"><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=100' class="cate1"><strong>중고 국내도서</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>                                 
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1&ItemType=100' class="cate1">소설/시/희곡</a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=55889&ItemType=100' class="cate1">에세이</a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=1108&ItemType=100' class="cate1">어린이</a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=13789&ItemType=100' class="cate1">유아 </a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=17195&ItemType=100' class="cate1"><strong>중고전집</strong></a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=170&ItemType=100' class="cate1">경제경영</a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=656&ItemType=100' class="cate1">인문학</a></li>
+                        <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=798&ItemType=100' class="cate1">사회과학</a></li>
+
+              <li style="padding-top:7px;"><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=101' class="cate1"><strong>중고 음반</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>                 
+              <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=102' class="cate1"><strong>중고 DVD/블루레이</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>                 
+			  
+          
+			  
+              <li><a href='http://used.aladin.co.kr/shop/wbrowse.aspx?CID=0&itemtype=106' class="cate1"><strong>중고 외국도서</strong><img src="/ucl_editor/img_secur/header/2010/bn_more.gif" width="14" height="11" border="0"></a></li>
+                                                   
+                    </ul>
+                </div>
+            </td>
+            
+            
+            <td width="8" background="http://image.aladin.co.kr/img/header/2011/icon_line.gif"></td>
+            
+            <td width="132" valign="top">
+                <div class="categorysub_layer_t"><a href='http://music.aladin.co.kr/home/wmusicmain.aspx'>음반</a></div>
+                <div class="categorysub_layer_new2">
+                    <ul>
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5911&BrowseTarget=List" class="cate1">가요</a></li> 
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5915" class="cate1"><strong>클래식</strong></a></li>                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5914&BrowseTarget=List" class="cate1">팝</a></li>  
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5916&BrowseTarget=List" class="cate1">재즈</a></li>
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5918&BrowseTarget=List" class="cate1">국악</a></li>
+                        
+                        
+                        
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=79050&BrowseTarget=List" class="cate1">월드뮤직</a></li> 
+
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5919&BrowseTarget=List" class="cate1">종교/명상/기타</a></li> 
+
+
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=9280&BrowseTarget=List" class="cate1">J-POP</a></li> 
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=5917&BrowseTarget=List" class="cate1">OST</a></li> 
+                        <li><a href="http://music.aladin.co.kr/shop/wbrowse.aspx?CID=49484&BrowseTarget=List" class="cate1">LP</a></li> 						
+                    </ul>
+                </div>
+                <br clear="all">
+                <div style="padding: 12px 0 0 0"></div>
+                <div class="categorysub_layer_t"><a href='http://dvd.aladin.co.kr/home/wdvdmain.aspx'>DVD/블루레이</a></div>
+                <div class="categorysub_layer_new2">
+                    <ul>
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6547" class="cate1">드라마/코미디</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=17280" class="cate1">TV시리즈</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6551" class="cate1">액션/어드벤쳐</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6684" class="cate1">S.F./판타지</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6545" class="cate1">공포/스릴러</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6550" class="cate1">애니메이션</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=6555" class="cate1">음악DVD</a></li> 
+                        <li><a href="http://dvd.aladin.co.kr/shop/wbrowse.aspx?CID=16704" class="cate1"><strong>블루레이</strong></a></li>
+                    </ul>
+                </div>
+            </td>
+            
+        </tr>
+    </table>
+    <div style="width: 938; text-align: right; margin: 15px 0 0 0;">
+        <a href="javascript:DisplayHide('head_layer_menu')"><img src="http://image.aladin.co.kr/img/header/2011/btn_close.gif" alt="닫기"></a>
+    </div>
+</div>
+
+                </div>
+                <!-- 헤더 레이어 메뉴 -->
+            </td>
+            <td valign="top">
+                <div id="re_mallmenu"><ul>
+<li><a href='http://music.aladin.co.kr/shop/usedshop/wshopitem.aspx?SC=0&SortOrder=6&ViewType=Detail&ViewRowsCount=25&PublishMonth=0&PublishDay=84&UsedShop=0&DiscountPercent=20&BranchType=1&Stockstatus=1&start=main&&CID=0&ItemType=101'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu2/musicmp3_m05.gif" class="mall_menu_img" /></a> &nbsp;<img src="http://image.aladin.co.kr/img/shop/2012/icon_new.gif" </li>
+<li class="mallse"></li>
+
+<li><a href='http://used.aladin.co.kr/shop/common/wbest.aspx?BranchType=6&BestType=AladinB2CUsedBest'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu2/usedshop_m01.gif" class="mall_menu_img" /></a></li>
+<li class="mallse"></li>
+<li><a href='http://used.aladin.co.kr/shop/UsedShop/wnewitem.aspx?CID=0&ItemType=100'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu2/usedshop_m12_1.gif" class="mall_menu_img" /></a></li>
+<li class="mallse"></li>
+
+
+
+<li><a href='http://used.aladin.co.kr/shop/UsedShop/wnewitem.aspx?ItemType=100&ViewRowsCount=25&ViewType=Detail&PublishMonth=0&SortOrder=6&page=1&UsedShop=0&PublishDay=84&CID=0&PriceFilterMin=1001&PriceFilterMax=2000'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu2/usedshop_m04.gif" class="mall_menu_img" /></a></li>
+<li class="mallse"></li>
+<li><a href='http://used.aladin.co.kr/shop/usedshop/favorite.aspx'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu2/usedshop_m05.gif" class="mall_menu_img" /></a></li>
+
+<li class="mallse"></li>
+<li><a href='http://used.aladin.co.kr/events/wevent.aspx?EventId=152337'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu2/usedshop_m10.gif" class="mall_menu_img" /></a></li>
+</ul></div>
+            </td>
+            <td width="260" valign="top">
+                <div id="re_submallmenu"><ul>
+
+<li><a href='http://used.aladin.co.kr/scm/wmain.aspx'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu3/sub_usedshop02.gif" class="mall_menu_img" /></a></li>
+
+<li class="submallse_pink"></li>
+
+<li><a href='http://used.aladin.co.kr/shop/usedshop/wc2b_gate_step2.aspx?search=1'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu3/sub_usedshop01.gif" class="mall_menu_img" /></a></li>
+
+
+<li class="submallse_pink"></li>
+<li><a href='http://used.aladin.co.kr/events/wevent.aspx?EventId=130065'><img src="http://image.aladin.co.kr/img/header/2011/mallmenu3/sub_usedshop10.gif" class="mall_menu_img" /></a></li>
+</ul></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+</div>
+
+    <div id="qs_div_iframe" style="display: none;">
+	    <iframe id="qs_iframe" name="qs_iframe" src="" frameborder="0"
+		    marginwidth="0" marginheight="0" topmargin="0" scrolling="no" allowTransparency>
+	    </iframe>
+    </div>
+
+<script type="text/javascript">
+    function headerTopReFormBanner(event){reFormBanner("Wa_header1_headerTop");}
+    Event.observe(window, "load", headerTopReFormBanner);
+    Event.observe(window, "resize", headerTopReFormBanner);    
+   
+    try{ setHeaderLayer();}
+    catch(e) { }    
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    
+    
+    $j(document).ready(function () {
+
+        if (location.href.indexOf('#') > 0)
+            return;
+
+        var currentPage = '/shop/usedshop/wc2b_search.aspx';
+                                            
+        if (currentPage.indexOf('/home') == 0 /*|| currentPage.indexOf('/search/wsearchresult.aspx') == 0*/
+            || currentPage.indexOf('/usedstore/wgate.aspx') == 0 || currentPage.indexOf('/usedstore/wstoremain.aspx') == 0
+            /*|| currentPage.indexOf('/usedstore/wsearchresult.aspx') == 0*/
+            ) {
+            $j('#SearchWord').focus();
+        }
+            
+
+        
+    });
+
+</script>
+
+
+    
+    <img class="btnScrollToTop" src="http://image.aladin.co.kr/img/bu/btn_top2.png" style="position:fixed; bottom:10px; right: 10px; z-index: 100; cursor: pointer; display: none;" alt="맨위로" />
+
+    <script type="text/javascript"> 
+        
+        var _window = null;
+        
+        $j(document).ready(function () {
+        
+            if (_window == null)
+                _window = $j(window);
+        
+            _window.bind('scroll.ScrollToTop', ScrollToTop_Scroll);
+            
+            $j('.btnScrollToTop').click(btnScrollToTop_Click);
+        });
+        
+        function ScrollToTop_Scroll(e)
+        {
+            var btnScrollToTop = $j('.btnScrollToTop');
+            
+            if (btnScrollToTop.is(':visible') == true)
+                return;
+                
+            btnScrollToTop.fadeIn(500);
+        }
+        
+        function btnScrollToTop_Click(e)
+        {
+            $j('body, html').animate({scrollTop : 0}, 500, function() { $j('.btnScrollToTop').fadeOut(500); });
+        }
+        
+    </script>    
+
+
+<!-- 알라딘 뉴스레터 클릭 이벤트 -->
+
+<!-- //알라딘 뉴스레터 클릭 이벤트 -->
+
+
+    <script type="text/javascript">
+        $j(function () {
+            var top = $j('#ank_search_top').offset().top;
+            if (top > 0) {
+                $j("body,html").scrollTop(top-30);
+                //$j("body,html").animate({'scrollTop':top-30},1000);
+            }
+            $j('#SearchKeyWord').focus();
+
+            $j("#btnCloseC2BSearchNotice").click(function (e) {
+                setCookie("c2b.search.notice", "1", 1);
+                $j("#c2bSearchNotice").hide();
+                return false;
+            });
+
+            var isHideNotice = getCookie("c2b.search.notice");
+            if (isHideNotice === "1") {
+                $j("#c2bSearchNotice").hide();
+            } else {
+                $j("#c2bSearchNotice").show();
+            }
+        });
+    </script>
+
+    <form method="get" name="SearchControl" id="SearchControl">
+        <input type="hidden" name="SearchTarget" id="SearchTarget" value="All" /><input type="hidden" name="KeyISBN" id="KeyISBN" value="8926790401" /><input type="hidden" name="KeyRecentPublish" id="KeyRecentPublish" value="0" /><input type="hidden" name="OutStock" id="OutStock" value="0" /><input type="hidden" name="ViewType" id="ViewType" value="Detail" /><input type="hidden" name="ViewRowCount" id="ViewRowCount" value="25" /><input type="hidden" name="SortOrder" id="SortOrder" value="11" /><input type="hidden" name="CustReviewCount" id="CustReviewCount" value="0" /><input type="hidden" name="CustReviewRank" id="CustReviewRank" value="0" /><input type="hidden" name="KeyWord" id="KeyWord" /><input type="hidden" name="CategorySearch" id="CategorySearch" /> <input type="hidden" name="chkKeyTitle" id="chkKeyTitle" value="" /><input type="hidden" name="chkKeyAuthor" id="chkKeyAuthor" value="" /><input type="hidden" name="chkKeyPublisher" id="chkKeyPublisher" value="" /><input type="hidden" name="chkKeyISBN" id="chkKeyISBN" value="" /><input type="hidden" name="chkKeyTag" id="chkKeyTag" value="" /><input type="hidden" name="chkKeyTOC" id="chkKeyTOC" value="" /><input type="hidden" name="chkKeySubject" id="chkKeySubject" value="" />
+        <input type="hidden" name="page" value="1">
+        <input type="hidden" name="ActionType" value="1" />
+        <input type="hidden" value="0" name="branchType">
+    </form>
+
+    <div id="c2b_bgwrap">
+        <div id="c2b_wrap">
+
+            
+
+<div class="c2b_head">
+    <ul class="c2b_head_n"><li class="menu_on"><a href="/shop/usedshop/wc2b_gate.aspx">알라딘에 중고 팔기</a></li><li class="menu_off"><a href="/shop/usedshop/wc2b_sales.aspx?C2BSalesType=4">원클릭 팔기</a></li></ul><ul class="c2b_head_n3"><li><a href="http://www.aladin.co.kr/events/wevent.aspx?EventId=152314"><font color="#e52d80"> 중고 품질 판정 10만명 투표결과</font></a></li></ul><ul class="c2b_head_n2" style="float:left; padding-left:30px;"><li class="c2b_head_n2_1 c2b_space_r40"><a href="/shop/usedshop/wc2b_sales.aspx">팔기 장바구니</a><div class="c2b_alram2 ItemQtySum">0</div></li><li class="c2b_head_n2_1 c2b_space_r20"><a href="https://www.aladin.co.kr/account/wc2binfo.aspx?pType=C2BOrderList">중고판매 조회/변경/취소</a></li></ul>
+</div>
+
+<style type="text/css">
+    .c2b_head_n3 { float:left;font-size:13px; font-family:malgun, "Malgun Gothic", Dotum, 돋움, sans-serif;letter-spacing:-1px; padding-top:15px; padding-left:26px; } .c2b_head_n3 a {color:#535353!important; font-weight:bold; text-decoration:none; }
+</style>
+
+            <div id="c2b_wrapbody">
+                <div id="c2b_wrapbody_in">
+                    
+                    
+
+<script type="text/javascript" src="/js/jquery.watermark.min.js"></script>
+<!-- 검색영역 -->
+
+<div id="ank_search_top" class="c2b_search_t"><img src="http://image.aladin.co.kr/img/usedshop/C2B_2015/c2b_t1.gif" alt="판매할 상품 찾기" title="판매할 상품 찾기" border="0" /></div>
+<div class="c2b_float_L">
+    <form id="UsedSearchForm" method="get" onsubmit="return fn_subimt()" action="/shop/usedshop/wc2b_search.aspx" style="margin:0">
+        <input type="hidden" name="ActionType" value="1" />
+        <input type="hidden" name="SearchTarget" value="All" />
+        <div class="c2b_search">
+            <ul>
+                <li class="c2b_search_L1" style="position:relative;">
+                    <a href="javascript:;" class="c2b_bb">전체상품</a>
+                    <div class="c2b_search_layer" style="position:absolute;left:5px;top:38px;display:none;z-index:999">
+                        <ul>
+                            <li><a href="All" class="c2b_layer_L01 SearchTarget">전체상품</a></li>
+                            <li><a href="Book" class="c2b_layer_L02 SearchTarget">국내도서</a></li>
+                            <li><a href="Foreign" class="c2b_layer_L02 SearchTarget">외국도서</a></li>
+                            <li><a href="Music" class="c2b_layer_L02 SearchTarget">음반</a></li>
+                            <li><a href="DVD" class="c2b_layer_L03 SearchTarget">DVD/블루레이</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="c2b_search_L2"><input type="text" name="KeyWord" id="SearchKeyWord" class="c2b_inputbox_click" value=""/></li>
+                <li class="c2b_search_L3"><input type="image" src="http://image.aladin.co.kr/img/usedshop/C2B_2015/btn_search.png" alt="검색" title="검색" border="0"/></li>
+            </ul>
+        </div>
+    </form>
+  
+    <!-- 검색 설명 -->
+    <div class="c2b_search_info">
+        <ul>
+            <li>신청한 상품과 실제 도착한 상품이 일치하지 않으면 매입하지 않습니다. </li>
+            <li>정확하게 상품을 찾기 위해  책 뒷면에 있는 <strong>ISBN</strong>으로 검색하길 추천합니다.</li>
+            
+            <li><a href="/events/wevent_usedshop.aspx?pn=151008_c2b" target="_blank" class="c2b_blue_u"><font color="#000000">스마트폰으로 바코드를 촬영하면 매입여부, 매입가를 즉시 확인할 수 있습니다.</font></a></li>
+            
+        </ul>
+    </div>
+    <div class="c2b_barcode"><img src="http://image.aladin.co.kr/img/usedshop/C2B_2015/barcode.gif" alt=""/></div>
+    <!-- 검색 설명// -->
+</div>
+
+<script type="text/javascript">
+    $j(document).ready(function () {
+        $j('.c2b_search_L1').hover(function (e) { $j(".c2b_search_layer").show(); }, function (e) { $j(".c2b_search_layer").hide(); });
+        $j('.c2b_search_layer').find(".SearchTarget").click(function (e) {
+            e.preventDefault();
+
+            $j('.c2b_search_L1 .c2b_bb').text($j(this).text());
+            $j(".c2b_search_layer").hide();
+            $j("#UsedSearchForm").find("input[name='SearchTarget']").val($j(this).attr("href"));
+        });
+    });
+
+
+    $j("#SearchKeyWord").watermark("ISBN, 바코드,  음반번호 또는 상품명, 저자명을 입력해주세요.", { useNative: false, className: 'watermark' });
+
+    function fn_subimt() {
+        var keyword = $j("#SearchKeyWord").val();
+        if (keyword.length < 1) {
+            alert("상품명 또는 ISBN을 입력해 주세요."); return false;
+        }
+        if (keyword.length < 2) {
+            alert("최소 2자 이상 입력해 주세요."); return false;
+        }
+        else return true;
+    }
+</script>
+
+                    <div class="c2b_space20"> </div>
+                    <div class="c2b_line_new"> </div> 
+                    <div class="c2b_space20"> </div>
+
+                    <!-- 검색 결과 리스트 -->
+                    <div class="c2b_listboxwrap">
+                        <!-- 검색결과 좌측 메뉴 -->
+                        <div class="c2b_list_m">
+                            <ul><li class="md2"><span>전체상품 (1)</span><li class="mdl"><span>국내도서 (1)</span><li class="mdl"><span>외국도서 (0)</span><li class="mdl"><span>음반 (0)</span><li class="md3"><span>DVD/BD (0)</span></ul>
+                        </div>
+
+                        <div class="c2b_list_box">
+                            <div id="pnItemList">
+	
+                                <!--안내문 추가-->
+                                <div class="price_info_box" id="c2bSearchNotice" style="display:none">
+                                    <div class="tt">※ 조회한 매입 예상가, 매입 여부는 실제 매입가와 다를 수 있습니다.</div>
+                                    <ul>
+                                        <li>조회한 매입 예상가는 현재의 정가에 대한 것으로, 동일 ISBN의 구정가의 경우 실제 매입가가 낮아질 수 있습니다.</li>
+                                        <li>매입가와 판매 가능 여부는 실시간으로 변경되므로 매장 방문 시점에 상품의 적정 재고량을 초과하면 매입가가 내려가거나 매입되지 않을 수 있습니다. 단 온라인 매입은 접수완료 시간 기준으로 확정됩니다.</li>
+                                        <li>매입 가능한 상품이어도 상품의 품질 상태에 따라 매입불가일 수 있습니다. <a href="http://www.aladin.co.kr/events/wevent.aspx?EventId=152314"
+                                            target="_blank">매입불가 품질 상태 자세히 보기</a></li>
+                                    </ul>
+                                    <div class="close_btn">
+                                        <div class="button"><a href="#" class="button_small" id="btnCloseC2BSearchNotice">오늘하루그만보기 X</a></div>
+                                    </div>
+                                </div>
+                                <!--안내문 추가 //-->                                
+                                <table border="0" align="center" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 5px;">
+                                    <tr>
+                                        <td><span class="c2b_emph"><strong><span class="search_author">ISBN </span>: “<span class=search_result>8926790401</span>”</strong></span>(으)로 총 <strong>1</strong>개의 상품이 검색되었습니다.</td>
+                                        <td class="c2b_right">
+                                            <div class="button_search_cart2 c2b_addlist" list="#searchResult"><a href="javascript:void(0);"><input type="checkbox" style="vertical-align:middle" checked="checked"> 선택상품 팔기 <strong>장바구니에 추가</strong></a> </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                    
+                                <!--정렬옵션-->
+                                
+
+                                
+
+                                
+				                <div style="border-bottom: 1px solid #CCCCCC;padding-top:5px;"></div>
+				                
+                    
+                                <!--검색결과리스트-->
+                                
+                                <table id="searchResult" border="0" cellpadding="0" width="100%" cellspacing="0" style="margin: 25px 0;">
+                                
+                                    <tr><td valign="top" width="25"><input class="chk" type="checkbox" name="isbn.8926790401" isbn="8926790401" /></td><td valign="top" width="100"><a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=6552720"><img src="http://image.aladin.co.kr/product/655/27/coversum/8926790401_1.jpg" style="width:85px;" /></a></td><td valign="top">
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td valign="top">[국내도서] <a href="http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=6552720" class="c2b_b"><strong>기어와라! 냐루코 양 1</strong></a><span class="c2b_gray2"> - L Novel</span><br/><a class="c2b_b2" href="/Search/wSearchResult.aspx?AuthorSearch=아이소라+만타@1637817&BranchType=1">아이소라 만타</a> (지은이), <a class="c2b_b2" href="/Search/wSearchResult.aspx?AuthorSearch=코인@832399&BranchType=1">코인</a> (그림), <a class="c2b_b2" href="/Search/wSearchResult.aspx?AuthorSearch=곽형준@814795&BranchType=1">곽형준</a> (옮긴이) | <a class="c2b_b2" href='/search/wsearchresult.aspx?PublisherSearch=%eb%94%94%ec%95%a4%ec%94%a8%eb%af%b8%eb%94%94%ec%96%b4(%ec%a3%bc)(D%26C%eb%af%b8%eb%94%94%ec%96%b4)@14046&BranchType=1' >디앤씨미디어(주)(D&C미디어)</A> | 2010년 3월<br/>9788926790403, 8926790401 (ISBN)
+</td>
+<td width="110" valign="top" class="c2b_right"><div class="button_search_used_sales c2b_add" isbn="8926790401"><a href='javascript:void(0);'>팔기 장바구니에<br><strong>추가</strong></a></div></td></tr></table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top: 10px;">
+<tr><td colspan="4" height="1" bgcolor="#ececec"></td></tr>
+<tr>
+<td width="25%" class="c2b_tablet2">정가</td>
+<td width="25%" class="c2b_tablet2">매입가 <strong>최상</strong></td>
+<td width="25%" class="c2b_tablet2">매입가 <strong>상</strong></td>
+<td width="25%" class="c2b_tablet2">매입가 <strong>중</strong></td>
+</tr>
+<tr><td colspan="4" height="1" bgcolor="#ececec"></td></tr>
+<tr>
+<td width="25%" class="c2b_tablet3">6,000원</td><td width="25%" class="c2b_tablet3">600원</td><td width="25%" class="c2b_tablet3">500원</td><td width="25%" class="c2b_tablet3">400원</td></tr>
+<tr><td colspan="4" height="1" bgcolor="#ececec"></td></tr>
+</table></td>
+</tr>
+                                
+                                </table>
+                                 
+
+                                <table cellspacing="0" cellpadding="0" width="100%" border="0">
+	                                <tr align="center">
+		                                <td style="padding : 10px 0 10px 0;" valign="bottom" >
+			                                <table cellspacing="0" cellpadding="0" align="center" border="0">
+				                                <tr>
+					                                <td></td>
+				                                </tr>
+			                                </table>
+		                                </td>
+	                                </tr>
+                                </table>
+                        
+                                
+                        
+                                
+                        
+                                
+                            
+</div>
+                            
+                        </div>    
+                    </div>
+
+                    <div class="c2b_space20"> </div> 
+                    <div class="c2b_space20"> </div>
+ 
+                    <!-- 알라딘에 중고 팔기 안내 -->
+                    
+
+
+
+<script type="text/javascript">
+    $j(function () {
+        $j(".c2b_guide_tab a").click(function () {
+            var id = $j(this).attr("id");
+            fn_guide_css_off(id);
+        });
+    });
+
+    function fn_guide_css_off(id) {
+        $j(".c2b_guide_box").hide();
+        $j(id).show();
+        
+        $j(".c2b_guide_tab a").each(function () {
+            $j(this).removeClass();
+            if (id == $j(this).attr("id")) {
+                $j(this).addClass("c2b_guide_tabon");
+            }
+            else {
+                $j(this).addClass("c2b_guide_taboff");
+            }
+        });
+
+        var top = $j('#ach_guide').offset().top;
+        if (top > 0) {
+            $j("body,html").scrollTop(top);
+        }
+
+    }
+</script>
+
+
+<!-- 알라딘에 중고 팔기 안내 -->
+<div id="ach_guide" class="c2b_titbox">
+    <h3 class="c2b_t">알라딘에 중고 팔기 안내</h3>
+</div>
+<div class="c2b_guide_tab">
+    <ul>
+    <li><a href="javascript:;" id="#guide_1" class="c2b_guide_tabon">팔기 신청</a></li>
+    <li><a href="javascript:;" id="#guide_2" class="c2b_guide_taboff">매입 가격</a></li>
+    <li><a href="javascript:;" id="#guide_3" class="c2b_guide_taboff">품질등급, 매입불가</a></li>
+    <li><a href="javascript:;" id="#guide_4" class="c2b_guide_taboff">발송방법, 배송비</a></li>
+    <li><a href="javascript:;" id="#guide_5" class="c2b_guide_taboff">매장에서 팔기</a></li>
+    <li><a href="javascript:;" id="#guide_6" class="c2b_guide_taboff">반송조건, 반송비</a></li>
+    </ul>
+</div>
+
+<!-- 팔기신청 -->
+<div id="guide_1" class="c2b_guide_box" style="height:740px;">
+    <ul>
+        <li>
+            <h4>1.판매할 상품 검색</h4>
+            <ul class="c2b_guide_L1">
+                <li>알라딘에 팔 수 있는 상품은 반드시 알라딘 상품 DB에 등록된 상품의 중고만 가능합니다.</li>
+                <li>판매하고자 하는 상품의 ISBN이나 음반번호 또는 상품명, 저자명으로 상품을 검색해주세요.</li>
+                <li>가급적 정확한 상품을 찾기 위해 ISBN으로 검색하길 추천합니다.</li>
+                <li><span class="emph c2b_emph">같은 상품(도서/CD/DVD/블루레이 등)을 5개 초과해서 판매하는 경우 구매처를 확인하는 절차가 있습니다.</span><br /><a href="http://blog.aladin.co.kr/cscenter/7210919" target="_blank" class="c2b_blue_u">출판문화산업진흥법 개정에 따른 중고 거래 주의사항 안내 보기<img src="http://image.aladin.co.kr/img/usedshop/C2B_2015/icon_more2.png" alt="" border="0"/></a></li>
+                <li style="color:red">증정도서는 매입하지 않습니다. 증정도서가 있는지 살펴봐주세요.</li>					
+            </ul>
+            <div><a href="http://www.aladin.co.kr/events/wevent_usedshop.aspx?pn=151008_c2b" target="_blank"><img src="http://image.aladin.co.kr/img/ad/banner/151020_c2b_w2.png" alt="" /></a></div>
+        </li>
+        <li>
+            <h4>2.팔기 장바구니에 상품 추가</h4>
+            <ul class="c2b_guide_L1">
+                <li>검색 조건에 해당되는 상품이 품질등급별 매입가격과 함께 표시됩니다.<br />가격을 참고하셔서 판매할 상품 오른쪽의 "팔기 장바구니에 추가" 버튼을 클릭하시면 "팔기 장바구니"에 상품이 추가됩니다.</li>
+                <li>상품 중 현재 매입이 불가능한 상품도 있으며, 이러한 상품은 판매가 불가능합니다. <a href="javascript:fn_guide_css_off('#guide_3');" class="c2b_blue_u">품질 등급, 매입불가 안내<img src="http://image.aladin.co.kr/img/usedshop/C2B_2015/icon_more2.png" alt="" border="0"/></a></li>
+                <li>매입가와 매입 불가 여부는 각 상품별 수요와 재고 상태에 따라 실시간으로 변경됩니다.</li>
+                <li>조회시 표기되는 매입 예상가는 현재의 정가에 대한 것으로, <b>도서 정가 및 출간일이 다른 구판인 경우 매입이 되지 않을 수 있습니다.</b></li>
+                <li>판매할 상품을 모두 담은 후,  '팔기 장바구니'로 이동해주세요.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>3. 품질등급 체크, 팔기 신청</h4>
+            <ul class="c2b_guide_L1">
+                <li>팔기 장바구니에 담긴 상품의 최상부터 중까지의 품질등급을 각각 선택해주세요.<br />품질등급을 변경하면 매입가격이 자동으로 재계산됩니다.</li>
+                <li>매입가와 판매 가능 여부는 실시간으로 변경되므로, 팔기 장바구니에 담겼더라도 장바구니 아래의 '매입 불가' 목록으로 이동될 수 있습니다.</li>
+                <li>품질등급 변경이 끝나면 '팔기 장바구니' 화면 하단의 지정 택배사 신청, 지정 편의점 신청 중, 발송 방법을 택해 주세요</li>
+                <li>1회 판매 신청 시 최대 20권까지 발송이 가능하니 이 수량 이하로 팔기 신청해주세요.</li>
+            </ul>
+        </li>
+
+        <li>
+            <h4>4. 판매 신청 완료</h4>
+            <ul class="c2b_guide_L1">
+                <li>판매한 금액을 정산 받는 방법, 배송 박스 옵션, 매입불가 상품에 대한 처리 옵션, 방문지/반송 주소와 연락처를 최종 확인 후 <br>
+'팔기 신청 완료' 버튼을 클릭하면 최종적으로 팔기 신청이 완료됩니다.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- 메입가격 -->
+<div id="guide_2" class="c2b_guide_box" style="display:none;height:740px;">
+    <ul>
+        <li>
+            <h4>1. 매입가격</h4>
+            <ul class="c2b_guide_L1">
+                <li>알라딘에 팔기 매입가는 (기본매입가x상태지수)+신간 인센티브(%)로 책정됩니다</li>
+                <li>기본매입가는 알라딘 보유재고량에 따라 차등적용됩니다.<br />
+                정상매입가는 판매가능한 적정재고 수량 이내에 적용됩니다.<br />
+                적정재고 초과 매입가는 판매가능한 수량을 조금 넘는 경우에 적용됩니다.<br />
+                과다재고 균일 매입가는 판매가능한 수량을 현저히 넘는 경우에 적용됩니다.<br />
+                </li>
+                <li>상태지수는 도서상태에 따라 최상급/상급/중급 별로 별도의 가중치가 있습니다.</li>
+                <li>신간 인센티브는 도서정가제법상 신간인 도서에 대하여 판매량에 따라 차등적용됩니다.</li>
+                <li>조회시 표기되는 매입 예상가는 현재의 정가에 대한 것으로, 동일 ISBN의 구정가의 경우 실제 매입가가 낮아질 수 있습니다.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>2. 균일가 매입</h4>
+            <ul class="c2b_guide_L1">
+                <li> 이미 충분한 재고를 확보하고 있거나, 원상품의 인기도, 분야 특성 등을 감안하여 재판매 가능성이 낮은 상품인 경우 균일가 매입의 대상 상품이 됩니다.<br />
+                균일가는 판매지수 예측, 분야 특성 등을 감안하여 300원 / 500원 / 700원 / 1,000원 / 2,000원 등 다양한 가격으로 매입됩니다.<br />
+                재판매가 불가능한 도서는 균일가 매입도 불가합니다.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>3. 매입가격 조회</h4>
+            <ul class="c2b_guide_L1">
+                <li>지금 보고 계신 페이지 위쪽의 검색 영역에서 판매하고자 하는 상품의 ISBN, 상품명, 저자명으로 검색할 수 있습니다.</li>
+                <li>정확한 검색을 위해 책 뒷면에 있는 ISBN (음반, DVD는 바코드, 음반번호)로 검색하시길 추천합니다</li>
+            </ul>
+        </li>
+    </ul>
+    <div><a href="http://www.aladin.co.kr/events/wevent_usedshop.aspx?pn=151008_c2b" target="_blank"><img src="http://image.aladin.co.kr/img/ad/banner/151020_c2b_w.png" alt="" /></a></div>
+</div>
+
+<!-- 품질등급 매입불가 -->
+<div id="guide_3" class="c2b_guide_box" style="display:none;">
+    <ul>
+        
+
+<style type="text/css">
+<!--
+#aladin_t {margin:0;font-size:12px;font-family:dotum;line-height:18px;}
+.head_title {padding-left:20px;color:#fff;font-weight:bold;font-size:14px;background-image:url('http://image.aladin.co.kr/img/common/popup_bg.jpg')}
+.content_title {margin:30px;padding:0;font-size:16px;font-weight:bold;text-align:center;}
+.mall_title {margin:10px 0;font-size:14px;font-weight:bold; text-align:left}
+.right {float:right}
+.right a{font-size:12px;text-decoration:none;color:#666}
+table.t_guide, .t_guide td, .t_guide th {padding:2px 8px;border-collapse:collapse;border:1px solid #cccccc;font-size:12px}
+table.t_guide {width:100%}
+table.t_guide th {padding:5px;/*background-color:#d8e1e5;*/ text-align:center}
+table.t_guide td {font-size:12px;line-height:22px;letter-spacing:0;text-align:left}
+table#s_book td {padding:2px 4px;letter-spacing:-1px}
+.th_color {background:#d7e4eb;}
+.th_color2 {background:#eef2f4;}
+.td_color {background:#fbf7e7;}
+-->
+</style>
+
+<!--div class="content_title">알라딘 중고 품질 판정 가이드</div-->
+		<!-- 책 품질 판정 -->
+		<div class="mall_title" style=" float: left; width:300px;">
+			&nbsp;도서&nbsp;
+		</div>
+        <div class="button" style=" float:right;"><a href="http://www.aladin.co.kr/events/wevent_usedshop.aspx?pn=160523_used_Council_result" class="button_middle"><strong> <font color="#e52d80">중고 품질 판정 10만명 고객위원회 투표결과 보러가기 : 도서</font> </strong></a> </div>
+		<table id="s_book" class="t_guide">
+			<col style="width:86px;#width:70px"></col>
+			<col width=""></col>
+			<col style="width:23%"></col>
+			<col style="width:23%"></col>
+			<col style="width:23%"></col>
+			<tr>
+				<th class="th_color">구분</th>
+				<th class="th_color">헌 상태</th>
+				<th class="th_color">표지</th>
+				<th class="th_color">책등 / 책배</th>
+				<th class="th_color">내부 / 제본상태</th>
+			</tr>
+			<!-- 최상 -->
+			<tr>
+				<th class="th_color2">최상</th>
+				<td>새것에 가까운 책</td>
+				<td>
+					변색 없음, 찢어진 흔적 없음<br/>
+					닳은 흔적 없음, 낙서 없음<br/>
+					얼룩 없음, 양장본의 겉표지 있음
+				</td>
+				<td>
+					변색 없음, 낙서 없음<br/>
+					닳은 흔적 없음, 얼룩 없음<br/>
+				</td>
+				<td>
+					변색 없음, 낙서 없음, 변형 없음<br/>
+					얼룩 없음, 접힌 흔적 없음<br/>
+					제본 탈착 없음<br/>
+				</td>
+			</tr>
+			<!-- 상 -->
+			<tr>
+				<th class="th_color2">상</th>
+				<td>약간의 사용감은 있으나 깨끗한 책</td>
+				<td>
+					희미한 변색이나 작은 얼룩이 있음<br/>
+					찢어진 흔적 없음<br/>
+					약간의 모서리 해짐<br/>
+					낙서 없음, 양장본의 겉표지 있음
+				</td>
+				<td>
+					희미한 변색이나 작은 얼룩이 있음<br/>
+					약간의 닳은 흔적 있음<br/>
+					낙서 없음
+				</td>
+				<td>
+					변색 없음, 낙서 없음, 변형 없음<br/>
+					아주 약간의 접힌 흔적 있음<br/>
+					얼룩 없음, 제본 탈착 없음
+				</td>
+			</tr>
+			<!-- 중 -->
+			<tr>
+				<th class="th_color2">중</th>
+				<td>사용감이 많으며 헌 느낌이 나는 책</td>
+				<td>
+					전체적인 변색, 모서리 해짐, 오염 있음<br/>
+					2cm 이하의 찢어짐, 래핑 흔적 있음<br/>
+					낙서 있음, 양장본의 겉표지 없음
+				</td>
+				<td>
+					전체적인 변색, 모서리 해짐 있음<br/>
+					오염 있음, 낙서 있음(이름 포함)
+				</td>
+				<td>
+					변색 있음, 2cm 이하 찢어짐 있음<br/>
+					5쪽 이하의 필기 및 밑줄 있음<br/>
+					얼룩 및 오염 있음, 제본 탈착 없음
+				</td>
+			</tr>
+			<!-- 매입 불가 -->
+			<tr>
+				<th class="td_color">매입 불가</th>
+				<td class="td_color">독서 및 이용에 지장이 있는 책<br><font color="red">증정 도서/비매품</font></td>
+				<td class="td_color">
+					2cm 초과한 찢어짐 있음<br/>
+					심한 오염 및 낙서 있음<br/>
+					물에 젖은 흔적 있음
+				</td>
+				<td class="td_color">
+					심한 오염 있음, 심한 낙서 있음<br/>
+					물에 젖은 흔적 있음
+				</td>
+				<td class="td_color">
+					2cm 초과한 찢어짐, 5쪽 초과 낙서<br/>
+					심한 오염 이나 젖은 흔적 있음<br/>
+					낙장 등의 제본불량, 분책 된 경우
+				</td>
+			</tr>
+		</table>
+		<!-- // 책 품질 판정 -->
+		<br/><br/>
+		<!-- 음반/DVD/블루레이 -->
+		<div class="mall_title" style=" float:left; width:300px;">
+			&nbsp;음반 / DVD / 블루레이&nbsp;
+		</div>
+        <div class="button" style=" float:right;"><a href="http://www.aladin.co.kr/events/wevent_usedshop.aspx?pn=160523_used_Council_result2" class="button_middle"><strong> <font color="#e52d80">중고 품질 판정 10만명 고객위원회 투표결과 보러가기 : 음반/DVD</font> </strong></a> </div>
+		<table id="s_music" class="t_guide">
+			<col style="width:86px;#width:70px"></col>
+			<col width="30%"></col>
+			<col width="#"></col>
+			<col width="30%"></col>
+			<tr>
+				<th class="th_color">구분</th>
+				<th class="th_color">디스크</th>
+				<th class="th_color">케이스</th>
+				<th class="th_color">북커버 / 북클릿</th>
+			</tr>
+			<!-- 최상 -->
+			<tr>
+				<th class="th_color2">최상</th>
+				<td>스크래치 없음, 오염 없음</td>
+				<td>스크래치 없음, 훼손 없음</td>
+				<td>사용감 없음, 오염 및 훼손 없음</td>
+			</tr>
+			<!-- 상 -->
+			<tr>
+				<th class="th_color2">상</th>
+				<td>스크래치 없음, 오염 없음</td>
+				<td>약간의 스크래치, 훼손 없음</td>
+				<td>약간의 사용감, 오염 및 훼손 없음</td>
+			</tr>
+			<!-- 중 -->
+			<tr>
+				<th class="th_color2">중</th>
+				<td>약간의 스크래치, 오염 없음</td>
+				<td>심한 스크래치, 훼손 있음</td>
+				<td>2cm 이하의 훼손, 약간의 오염</td>
+			</tr>
+			<!-- 매입 불가 -->
+			<tr>
+				<th class="td_color">매입 불가</th>
+				<td class="td_color">심한 스크래치, 오염, 재생불가</td>
+				<td class="td_color">케이스 없음</td>
+				<td class="td_color">2cm 초과한 훼손, 심한 오염</td>
+			</tr>
+		</table>
+		<!-- // 음반/DVD/블루레이 -->
+		<br/><br/>
+		<!-- 매입 불가 -->
+		<div class="mall_title">&nbsp;매입 불가</div>
+		<table class="t_guide">
+			<tr>
+				<th class="td_color">품질등급과 무관한 매입 불가 상품</th>
+			</tr>
+			<tr><td>ㅇ 캘린더 / 다이어리 / 스케쥴러 / 어린이 전집 / 매년 개정되는 문제풀이 위주의 참고서 / 시즌이 지난 수험서 및 컴퓨터 서적</td></tr>
+			<tr><td>ㅇ 요리 / 인문사회 / 과학 / 문예지 / 만화 / 예술 분야를 제외한 잡지 분야 상품</td></tr>
+			<tr><td>ㅇ 부록이 없는 학습서, 도서관/대여점/공공기관 등의 스티커가 부착된 상품, 증정/비매품 도장이 날인된 상품</td></tr>
+			<tr><td>ㅇ 분철 또는 분책된 도서, 불법 복제 등 비정상 유통 상품</td></tr>
+			<tr><td>ㅇ 알라딘에 등록되지 않았거나 알라딘에 등록된 상품과 ISBN 정보가 일치하지 않는 상품</td></tr>
+			<tr><td>ㅇ 기타 알라딘의 판매능력을 초과한 상품 (보유 재고가 많은 상품, 비디오테이프 및 카세트테이프 상품, LP 등)</td></tr>
+		</table>
+		<!-- // 매입 불가 -->
+		<br/><br/>
+		<div style="text-align:left">
+			<b>* 품질 판정은 가장 낮은 단계를 기준으로 합니다.</b><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;예1) 새책과 같이 깨끗한 양장본 도서이나 겉표지가 없는 경우 품질등급은 '중' 입니다.<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;예2) 새상품과 같이 깨끗한 음반이나 북클릿이 반으로 찢어진 경우 품질등급은 '매입 불가' 입니다.<br/>
+			
+		</div>
+    </ul>
+</div>
+
+<!-- 택배, 편의점 발송 -->
+<div id="guide_4" class="c2b_guide_box" style="display:none;height:740px;">
+    <ul>
+        <li>
+            <h4>1. 포장하기</h4>
+            <ul class="c2b_guide_L1">
+                <li>프린트한 매입 신청서와 보낼 상품을 한 박스에 담아 포장해주세요. 단, 프린터가 없는 경우에는 빈종이에 접수번호만 적어서 보내주세요.</li>
+                <li>박스당 최대 20권(단, 중량 기준 최대 10kg) 이하로 포장해주세요.(10Kg 초과시 택배 회수 혹은 편의점위탁 불가)</li>
+                <li>적합한 박스가 없으면, 알라딘 중고 박스를 이용하시면 편리합니다. 
+                   알라딘 중고 박스는 정산시 박스 가격이 100% 환불됩니다. <a href="http://www.aladin.co.kr/shop/wproduct.aspx?ISBN=6000536477" class="c2b_blue_u" target="_blank">알라딘 중고 박스 보기<img src="http://image.aladin.co.kr/img/usedshop/C2B_2015/icon_more2.png" alt="" border="0"/></a></li>
+            </ul>
+        </li>
+        <li>
+            <h4>2. 배송비</h4>
+            <ul class="c2b_guide_L1">
+                <li>지정 택배사 방문 회수 : 박스당 1,500원입니다. 단, 박스당 1만원 이상의 상품을 판매할 경우 배송료 무료입니다.</li>
+                <li>지정 편의점 위탁 : 박스당 2,500원입니다. 단, 박스당 1만원 이상의 상품을 판매할 경우 배송료 1,000원입니다.</li>
+                <li>상품이 알라딘에 도착한 후, 최종 정산액이 위 무료배송기준을 충족하지 않으면 면제 배송료가 부과되어 나머지 금액만 정산됩니다.<br>
+                <li>알라딘 중고 박스 정산 금액은 무료배송 조건에 포함되지 않습니다.</li>
+                <li>1건 신청 후 실제로 여러 박스로 보내시면 도착 후 실제 박스 수량만큼 배송비가 추가로 계산되어 정산 지급금에서 차감됩니다.</li>
+                <li>배송비는 택배기사 또는 편의점에 직접 지불하지 않고, 정산시 자동 차감됩니다.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>3. 지정 택배사 방문 회수</h4>
+            <ul class="c2b_guide_L1">
+                <li>박스 포장 후 기다리시면 신청 후 1~2일(단, 평일 기준) 내 기사님이 회수운송장을 지참해 방문합니다.<br />수령인(구매자) 성함과 운송장 성함 일치 여부를 확인한 후 인계해주세요. (단, 신청 후 30일 초과시 신청 자동 취소)</li>
+            </ul>
+        </li>
+        <li>
+            <h4>4. 지정 편의점 위탁</h4>
+            <ul class="c2b_guide_L1">
+                <li>신청 후 2시간 후 ~ 1주일 내 포장박스를 직접 인근 점포에 들러 위탁해주셔야 합니다. (1주일 경과시 신청 취소로 재신청 필요) <a href="http://www.cvsnet.co.kr/GIS/chzero/cvsnet_shop_home_terminal_size.jsp" target="_blank" class="c2b_blue_u">지정 편의점 찾기 GS</a> &nbsp; <a href="https://www.cupost.co.kr/GIS/chzero/cupost_shop_home_terminal_size.jsp" target="_blank" class="c2b_blue_u">지정 편의점 찾기 CU</a><img src="http://image.aladin.co.kr/img/usedshop/C2B_2015/icon_more2.png" alt="" border="0"/></a></li>
+                <li>편의점 방문시 아래의 위탁신청번호를 반드시 메모해 가셔서 신청번호를 이용해 쇼핑몰 거래 > 운송장 출력>포장박스 중량측정 후 운송장 부착해 점포에 맡겨주세요.</li>
+            </ul>
+        </li>  
+    </ul>
+
+</div>
+
+
+<!-- 매장에서 팔기 -->
+<div id="guide_5" class="c2b_guide_box" style="display:none;height:740px;">
+    <ul>
+        <li>
+            <ul class="c2b_guide_L1">
+                <li>별도의 신청을 하실 필요는 없으며, 매입 가능 상품만 매장에 가져 가시면 됩니다.</span></li>
+		        <li><span style="font-weight:bold"> 단, 판매시 휴대폰 본인인증(회원은 최초 판매시 1회만, 비회원은 판매시 매번) 거쳐야 하니, 휴대폰을 꼭 지참해주십시오</span></li>
+		        <li>매입 가격은 온라인 매입가격과 동일하게 책정됩니다.</li>
+		        <li>매입 가격과 재고는 실시간 적용되므로 매장 방문 시점에 매입가격이 변동될 수 있고, 보유 재고량을 초과하면 매입불가로 바뀔 수 있습니다.</li>
+            </ul>
+        </li>
+    </ul>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+
+
+<!-- 반송조건, 반송비 -->
+<div id="guide_6" class="c2b_guide_box" style="display:none;height:740px;">
+    <ul>
+        <li>
+            <h4>반송조건</h4>
+
+<span style="font-weight:bold">아래와 같은 경우 사전 안내 없이 고객님 부담으로 착불 반송 되니 주의해주세요. (매입불가상품 처리 옵션을 '폐기'로 선택하시면 즉시 폐기됩니다.)</span><br><br>
+
+			
+            <ul class="c2b_guide_L1">
+		        <li>신청 내역 없이 임의로 동봉해서 보내신 상품의 경우</li>
+		        <li>도착품의 상태가 체크해주신 품질과 현격히 차이가 나는 경우</li>
+		        <li>원래 상태와 다르게 분책된 도서, 찢겨나간 페이지가 있는 경우</li>
+		        <li>다섯 페이지 이상 낙서가 있거나, 물에 젖어 훼손이 심한 경우</li>
+		        <li>핸드북/CD 등의 부속물이 없는 경우 (이벤트 등 임시로 증정하던 증정품은 제외)</li>
+		        <li>알라딘에 등록된 상품과 ISBN 정보가 일치하지 않는 경우 (ISBN 일치하나 정가가 다른 경우 실물 대조 후 ISBN 불일치하면 반송)</li>
+		        <li>대여점/도서관에서 사용된 흔적(날인 등)이 있는 경우</li>
+                <li>증정도서/비매품</li>					
+		        <li>2cm 이상 찢어짐이 있는 경우<br />단, 반송처리에 대한 메일/문자를 통해 안내 드리며, 매입신청 내역은 웹에서도 조회가 가능합니다.</li>
+				
+            </ul>
+        </li>
+        <li>
+            <h4>반송비</h4>
+            <ul class="c2b_guide_L1">
+                <li>반송비는 박스당 1,500원이며 (제주도 및 도서 산간 지역 별도) 배송비. 반송비 차감 후 나머지만 정산됩니다.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+ 
+                    <div id="c2b_foot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<div style="clear:both"> </div>
+<div id="footer">
+
+  
+    <style type="text/css">
+    <!--
+
+    #search_mall {border:0; font-size: 12px; font-family:"돋움"; width: 100%; color:#444444; line-height: 16px}
+    #search_box_all { text-align:left;}
+    #search_box {border:0; font-size: 12px; font-family:"돋움"; width: 100%; color:#3774B1; line-height: 16px}
+    #search_hot {background: url(http://image.aladin.co.kr/img/header/search_hot_bg.gif)  no-repeat;  font-size: 12px; font-family:"돋움";padding: 2px 0 0 4px; }
+
+    a.search_hot:link {  color: #444444; text-decoration: none}
+    a.search_hot:visited {  color: #444444; text-decoration: none}
+    a.search_hot:hover {  color: #444444; text-decoration: underline}
+
+    A.new_ml01:link {  color: #444444; text-decoration: none}
+    A.new_ml01:visited {  color: #444444; text-decoration: none}
+    A.new_ml01:hover {  color:#444444; text-decoration: underline}
+    .newfootbox {border:1px solid #cccccc;font-family:dotum;font-size:12px;padding:0 2px 0 2px;height:22px;}
+	
+    
+	.nfoot_w { border-top:3px solid #2f9ddc; background:#f2f2f2; margin:0 auto; width:930px; padding:5px 0 ;  height:28px; }
+	.box_sp1 {  border-radius:2px;  border:1px solid #8fc1ec; width:99px;float:left; height:24px; background:url(http://image.aladin.co.kr/img/footer/2015/foot_dw.gif) no-repeat right top; background-color:#FFFFFF; margin-left:200px}
+	.box_sp1 a:link { display:block; color:#3774B1; text-decoration:none; padding:6px 0 0 5px;font-size: 12px; font-family:"돋움";}
+	.box_sp1 a:hover { display:block; color:#3774B1; text-decoration:none; }
+	.box_sp1 a:visited { display:block; color:#3774B1; text-decoration:none; }
+	.nfoot_w .box_ip { border-radius:2px;  border:1px solid #8fc1ec; width:310px; padding:2px 2px 3px 2px; background:#FFFFFF; float:left; margin:0 2px;height:19px}
+	.nfoot_w .box_ip .sebox {border:0px solid transparent;font-size: 12px; font-family:"돋움"; width: 99%; color:#3774B1; line-height: 16px }
+	
+    -->
+    </style>
+  
+    
+
+<div style="clear:both;"></div>
+
+<table width="930" border="0" cellspacing="0" cellpadding="0" align="center" style="text-align:center;">
+
+	<tr>
+		<td height="33" align="center" style="text-align: center; border-bottom:1px solid #E6E6E6; border-top:1px solid #E6E6E6">
+			<a href="http://www.aladin.co.kr/aladdin/waladdin.aspx?pn=overview" class="ml05">회사소개</a> <font color="#ebebeb"> l </font>
+			<a href="http://blog.aladin.co.kr/cscenter/6145465" class="ml05">이용약관</a> <font color="#ebebeb"> l </font>
+			<a href="http://blog.aladin.co.kr/cscenter/7068786" class="ml05"><strong>개인정보취급방침</strong></a> <font color="#ebebeb"> l </font>
+			<a href="http://www.aladin.co.kr/cs_center/wcs_main.aspx" class="ml05">고객센터</a> <font color="#ebebeb"> l </font>
+			<a href="http://used.aladin.co.kr/usedstore/wgate.aspx" class="ml05">중고매장</a> <font color="#ebebeb"> l </font>
+			<a href="http://www.aladin.co.kr/partnership/wguide.aspx" class="new_ml05">제휴/마케팅 안내</a><font color="#ebebeb"> l </font>
+			<a href="http://www.aladin.co.kr/scm/wmain_login.aspx" class="new_ml05">판매자 매니저</a><font color="#ebebeb"> l </font>
+			<a href="http://www.aladin.co.kr/supplier/wmain.aspx" class="new_ml05">출판사/공급사 안내</a><font color="#ebebeb"> l </font>
+			<a href="http://www.aladin.co.kr/supplier/wfaq.aspx#7" class="new_ml05">광고 안내</a><font color="#ebebeb"> l </font>
+			<a href="http://aladin.co.kr/aladdin/wclassbook_intro.aspx?MenuType=sub0101" class="new_ml05">학교/기업/기관 대량구매</a>&nbsp;&nbsp;
+		    <a href="#top"><img src="http://image.aladin.co.kr/img/footer/2011/go_top.gif" border="0" align="absmiddle"></a>
+		</td>
+    </tr>
+
+</table><!-- 푸터 메뉴// -->
+
+<table width="930" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:20px;margin-top:20px;">
+<tbody><tr>
+<td width="159"><a href="http://www.aladin.co.kr/?start=we"><img src="http://image.aladin.co.kr/img/footer/2013/foot_aladin_01.gif" width="159" height="85" border="0"></a></td>
+<td width="385"><img src="http://image.aladin.co.kr/img/footer/2013/foot_aladin_02_3.gif" width="385" height="105" border="0" usemap="#Map"/></td>
+<td width="386"><img src="http://image.aladin.co.kr/img/footer/2013/foot_aladin_03_3.gif" width="386" height="105" border="0" usemap="#Map2"/></td>
+</tr>
+</tbody></table>
+
+<map name="Map" id="Map">
+<area shape="rect" coords="181,87,211,104" href="http://www.aladin.co.kr/aladdin/waladdin.aspx?pn=contactus" alt="약도" />
+<area shape="rect" coords="72,65,153,82" href="javascript:fn_ftc_check();" alt="사업자정보확인" title="사업자정보확인" />
+<area shape="rect" coords="286,87,353,104" href="http://used.aladin.co.kr/usedstore/wgate.aspx" alt="중고서점 자세히보기" />
+</map>
+<map name="Map2" id="Map2">
+<area shape="rect" coords="248,0,302,17" href="http://www.aladin.co.kr/cs_center/wcs_ConsultQS.aspx?NoLoginQ=1" alt="문의하기" title="문의하기" />
+<area shape="rect" coords="233,70,320,86" href="javascript:fn_kcp_es_check();" alt="서비스가입확인" title="서비스가입확인" /></map>
+
+    
+<script type="text/javascript">
+function fn_ftc_check() {
+var url ="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2018123094";
+window.open(url, "communicationViewPopup", "width=750, height=700;");
+}
+</script>
+
+
+
+
+</div>
+
+
+<!--파트너 이지웰인 경우 제외 : 스크립트 오류가 발생함-->
+<script type="text/javascript">
+    if( typeof CU_rl == 'undefined' ){
+        var CU_rl = 'http://'+'aladdin.acecounter.com:8080'; var PCHKIMG = new Image(); var CL_bn=navigator.appName;
+        if( document.URL.substring(0,8) == 'https://' ){ CU_rl = 'https://aladdin.acecounter.com/sslc1'; 
+        }else{
+            if( CL_bn.indexOf("Netscape") > -1 || CL_bn=="Mozilla"){ setTimeout("PCHKIMG.src = CU_rl+'/?cookie';",1); } else{ PCHKIMG.src = CU_rl+'/?cookie'; };
+        }
+        document.writeln("<scr"+"ipt language='javascript' src='/acecounter/acecounter_mainscript.js'></scr"+"ipt>");
+    }
+</script>
+    
+
+    
+
+
+
+<!--20141029 : 다음DDN 리마케팅 -->
+<script type="text/javascript">
+    var roosevelt_params = {
+        retargeting_id: 'spxQkEQAedASH1lzAA8rpQ00',
+        tag_label: 'c5Sc2v2KTOGADVSajp_l7g'
+    };
+</script>
+<script type="text/javascript" src="//adimg.daumcdn.net/rt/roosevelt.js"></script>
+<!-- //20141029 : 다음DDN 리마케팅 -->
+
+
+
+
+
+<!--에스크로 결제 가입 체크-->
+<script language="javascript">
+<!--
+function fn_kcp_es_check()
+{
+	var status  = "width=500 height=450 menubar=no,scrollbars=no,resizable=no,status=no";
+	var obj     = window.open('', 'kcp_pop', status);
+
+	document.frm_kcp_es_check.method = "post";
+	document.frm_kcp_es_check.target = "kcp_pop";
+	document.frm_kcp_es_check.action = "https://admin.kcp.co.kr/Modules/escrow/kcp_pop.jsp";
+
+	document.frm_kcp_es_check.submit();
+}
+//-->
+</script>
+<form name="frm_kcp_es_check" method="post" action="https://admin.kcp.co.kr/Modules/escrow/kcp_pop.jsp" style="margin-top:0px; margin-bottom:0px;"><input type="hidden" name="site_cd" value="E3334"></form>
+
+
+
+<!--구글분석기 14.06.17 Updated by Gootooc -->
+<script type="text/javascript">
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59266-2', 'aladin.co.kr');
+    ga('send', 'pageview');
+
+</script>
+
+<!-- Crazy Egg -->
+<script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0022/1494.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- ClickTale Bottom part -->
+
+
+
+
+
+
+
+<!-- 네이버 프리미엄 로그분석 -->
+
+
+
+<!-- Emforce ROI General Tag Start--> 
+<script src = "/js/part/emforce/general_gd.js"></script>
+<!-- Emforce ROI General Tag End--> 
+
+</body>
+</html>
