@@ -1,10 +1,12 @@
 # fumika
 중고책 매입가 검색 API
 
+[![Build Status](https://travis-ci.org/if1live/fumika.svg?branch=master)](https://travis-ci.org/if1live/fumika)
+
 ## Features
 * 검색 가능한 인터넷 서점
-    * 알라딘
-    * Yes24
+    * 알라딘 : http://off.aladin.co.kr/shop/usedshop/wc2b_search.aspx 파싱
+    * Yes24 : http://www.yes24.com/Mall/buyback/Search 파싱
 * 검색 가능한 키워드
     * ISBN
 * 검색 가능한 정보
@@ -25,6 +27,9 @@ go test
 ```
 
 ## Usage
+
+`examples/main.go` 참고
+
 ### Aladin
 
 ```golang
