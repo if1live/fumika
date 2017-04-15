@@ -5,6 +5,8 @@
 * 검색 가능한 인터넷 서점
     * 알라딘
     * Yes24
+* 검색 가능한 키워드
+    * ISBN
 * 검색 가능한 정보
     * 제목
     * 정가
@@ -28,7 +30,7 @@ go test
 ```golang
 api := fumika.NewAladin()
 isbn := "9788926790403"
-result, err := api.Search(isbn)
+result, err := api.SearchISBN(isbn)
 if err != nil {
     panic(err)
 }
@@ -51,7 +53,7 @@ PriceNormal : 400
 ```golang
 api := fumika.NewYes24()
 isbn := "9788926790403"
-result, err := api.Search(isbn)
+result, err := api.SearchISBN(isbn)
 if err != nil {
     panic(err)
 }

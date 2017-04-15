@@ -21,7 +21,7 @@ func NewYes24() *Yes24API {
 	return &Yes24API{}
 }
 
-func (api *Yes24API) Search(isbn string) (SearchResult, error) {
+func (api *Yes24API) SearchISBN(isbn string) (SearchResult, error) {
 	sanitizedISBN, ok := sanitizeISBN(isbn)
 	if !ok {
 		return SearchResult{}, errors.New("invalid isbn : " + isbn)

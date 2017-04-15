@@ -14,7 +14,7 @@ func main() {
 func mainYes24() {
 	api := fumika.NewYes24()
 	isbn := "9788926790403"
-	result, err := api.Search(isbn)
+	result, err := api.SearchISBN(isbn)
 	if err != nil {
 		panic(err)
 	}
@@ -26,7 +26,7 @@ func mainYes24() {
 func mainAladin() {
 	api := fumika.NewAladin()
 	isbn := "9788926790403"
-	result, err := api.Search(isbn)
+	result, err := api.SearchISBN(isbn)
 	if err != nil {
 		panic(err)
 	}
