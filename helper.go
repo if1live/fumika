@@ -10,7 +10,7 @@ import (
 	"golang.org/x/text/transform"
 )
 
-func sanitizeISBN(code string) (string, bool) {
+func SanitizeISBN(code string) (string, bool) {
 	var buffer bytes.Buffer
 	for _, c := range code {
 		if c >= '0' && c <= '9' {

@@ -21,7 +21,7 @@ func Test_sanitizeISBN(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		got, ok := sanitizeISBN(c.code)
+		got, ok := SanitizeISBN(c.code)
 		if ok != c.ok || got != c.isbn {
 			t.Errorf("sanitizeISBN - expected (%q, %q), got (%q, %q)", c.isbn, c.ok, got, ok)
 		}

@@ -27,7 +27,7 @@ func NewAladin(client *http.Client) *AladinAPI {
 }
 
 func (api *AladinAPI) SearchISBN(isbn string) (SearchResult, error) {
-	sanitizedISBN, ok := sanitizeISBN(isbn)
+	sanitizedISBN, ok := SanitizeISBN(isbn)
 	if !ok {
 		return SearchResult{}, errors.New("invalid isbn : " + isbn)
 	}

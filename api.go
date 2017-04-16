@@ -10,3 +10,7 @@ type SearchResult struct {
 	PriceGood   int `json:"price_good"`
 	PriceNormal int `json:"price_normal"`
 }
+
+type SearchAPI interface {
+	SearchISBN(isbn string) (SearchResult, error)
+}
