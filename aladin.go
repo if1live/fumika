@@ -4,6 +4,8 @@ import (
 	"errors"
 	"io"
 
+	"net/http"
+
 	"golang.org/x/net/html"
 )
 
@@ -15,10 +17,13 @@ simple url : http://off.aladin.co.kr/shop/usedshop/wc2b_search.aspx?KeyWord=9788
 */
 
 type AladinAPI struct {
+	client *http.Client
 }
 
-func NewAladin() *AladinAPI {
-	return &AladinAPI{}
+func NewAladin(client *http.Client) *AladinAPI {
+	return &AladinAPI{
+		client: client,
+	}
 }
 
 func (api *AladinAPI) SearchISBN(isbn string) (SearchResult, error) {
@@ -27,7 +32,7 @@ func (api *AladinAPI) SearchISBN(isbn string) (SearchResult, error) {
 		return SearchResult{}, errors.New("invalid isbn : " + isbn)
 	}
 	uri := api.createURI(sanitizedISBN)
-	reader, err := uriToReader(uri)
+	reader, err := uriToReader(uri, api.client)
 	if err != nil {
 		return SearchResult{}, err
 	}

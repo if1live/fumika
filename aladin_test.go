@@ -14,7 +14,7 @@ func Test_Aladin_createURI(t *testing.T) {
 		{"9788926790403", "http://off.aladin.co.kr/shop/usedshop/wc2b_search.aspx?KeyWord=9788926790403"},
 	}
 	for _, c := range cases {
-		api := NewAladin()
+		api := NewAladin(nil)
 		got := api.createURI(c.isbn)
 		if got != c.uri {
 			t.Errorf("createURI - expected %q, got %q", c.uri, got)
@@ -63,7 +63,7 @@ func Test_Aladin_parse(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		api := NewAladin()
+		api := NewAladin(nil)
 		b, err := ioutil.ReadFile(c.filepath)
 		if err != nil {
 			panic(err)

@@ -14,7 +14,7 @@ func Test_Yes24_createURI(t *testing.T) {
 		{"9788926790403", "http://www.yes24.com/Mall/buyback/Search?SearchWord=9788926790403"},
 	}
 	for _, c := range cases {
-		api := NewYes24()
+		api := NewYes24(nil)
 		got := api.createURI(c.isbn)
 		if got != c.uri {
 			t.Errorf("createURI - expected %q, got %q", c.uri, got)
@@ -52,7 +52,7 @@ func Test_Yes24_parse(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		api := NewYes24()
+		api := NewYes24(nil)
 		b, err := ioutil.ReadFile(c.filepath)
 		if err != nil {
 			panic(err)

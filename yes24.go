@@ -5,6 +5,8 @@ import (
 
 	"errors"
 
+	"net/http"
+
 	"golang.org/x/net/html"
 )
 
@@ -15,10 +17,13 @@ short url : http://www.yes24.com/Mall/buyback/Search?SearchWord=9788926790403
 */
 
 type Yes24API struct {
+	client *http.Client
 }
 
-func NewYes24() *Yes24API {
-	return &Yes24API{}
+func NewYes24(client *http.Client) *Yes24API {
+	return &Yes24API{
+		client: client,
+	}
 }
 
 func (api *Yes24API) SearchISBN(isbn string) (SearchResult, error) {
@@ -27,7 +32,7 @@ func (api *Yes24API) SearchISBN(isbn string) (SearchResult, error) {
 		return SearchResult{}, errors.New("invalid isbn : " + isbn)
 	}
 	uri := api.createURI(sanitizedISBN)
-	reader, err := uriToReader(uri)
+	reader, err := uriToReader(uri, api.client)
 	if err != nil {
 		return SearchResult{}, err
 	}

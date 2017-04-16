@@ -40,12 +40,11 @@ func sanitizePrice(text string) (int, bool) {
 	return price, true
 }
 
-func uriToReader(uri string) (io.Reader, error) {
+func uriToReader(uri string, client *http.Client) (io.Reader, error) {
 	req, err := http.NewRequest("GET", uri, nil)
 	if err != nil {
 		return nil, err
 	}
-	client := http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err

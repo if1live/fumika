@@ -2,11 +2,11 @@ package fumika
 
 type SearchResult struct {
 	// metadata
-	SearchedISBN string
-	Title        string
+	SearchedISBN string `json:"searched_isbn"`
+	Title        string `json:"title"`
 
-	UnitPrice   int
-	PriceBest   int
-	PriceGood   int
-	PriceNormal int
+	UnitPrice   int `json:"unit_price"`
+	PriceBest   int `json:"price_best"`
+	PriceGood   int `json:"price_good"`
+	PriceNormal int `json:"price_normal"`
 }
